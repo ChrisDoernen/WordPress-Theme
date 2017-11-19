@@ -1,0 +1,41 @@
+#login h1 a, .login h1 a {
+    background-image: url('../img/loginLogo.png');
+    width: initial;
+    background-size: contain;
+    margin: 40px;
+}
+
+.login .button-primary {
+  width: 120px;
+  float:right;
+  background-color:#62a2ab !important;
+  color: #ffffff;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid #62a2ab;
+}
+
+.login .button-primary:hover {
+  background-color:#62a2ab !important;
+  color: #fff;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid #62a2ab;
+}
+
+.login .button-primary:active {
+  background-color:#62a2ab !important;
+  color: #fff;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid #62a2ab;
+}
+
+p#nav {
+  display: none;
+}
+
+.login #login_error, 
+.login .message{
+    border-left: 4px solid #62a2ab;
+}
