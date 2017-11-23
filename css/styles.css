@@ -862,7 +862,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     margin: 13px;
 }
 
-.post__author-bio {
+.post__author-bio p {
     font-style: italic;
     font-size: 1.0rem;
     font-weight: 300;
