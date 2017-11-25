@@ -596,7 +596,7 @@ background-color: #ececec;
 }
 
 .newsletter {
-    height: 550px;
+    height: 675px;
     font-weight: 300;
 }
 
@@ -616,6 +616,13 @@ background-color: #ececec;
 }
 
 #mc_embed_signup {
+    background:#fff; 
+    clear:left; 
+    font-size: 14px;
+    font-family: inherit; 
+}
+
+#mc_embed_signup {
     position: relative;
     z-index: 50;
     padding: 0;
@@ -624,7 +631,7 @@ background-color: #ececec;
 #mc_embed_signup form {
     padding: 0;
     text-align: left;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 #mc_embed_signup .button {
@@ -639,10 +646,25 @@ background-color: #ececec;
     width: auto;
 }
 
-#mc_embed_signup input.email {
+#mc_embed_signup input.email,
+#mc_embed_signup input.name {
     font-family: inherit;   
     width: 250px; 
-    margin: 10px 0;
+}
+
+#mc_embed_signup .mc-field-group {
+    padding-bottom: 0;
+}
+
+#mc_embed_signup input:focus {
+    outline: -webkit-focus-ring-color auto 4px;
+    outline-color: #5a8a8f;
+    outline-style: auto;
+    outline-width: 5px;
+}
+
+#mc_embed_signup input {
+    border: 1px solid #dadada;
 }
 
 .service {
@@ -1508,7 +1530,7 @@ Extra Small Devices, Phones
     }
     
     .newsletter {
-        height: 420px;
+        height: 430px;
     }
     
     .newsletter-iphone {

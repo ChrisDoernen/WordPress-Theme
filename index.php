@@ -312,19 +312,24 @@
 					        <br>
 					        </div>
 					        <!-- Begin MailChimp Signup Form -->
-                                
                                 <div id="mc_embed_signup">
-                                    <form action="//arche-augsburg.us9.list-manage.com/subscribe/post?u=a5275cd120ef312863a46429d&amp;id=5425da3d2d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                        <div id="mc_embed_signup_scroll">
-                                    	<!--<label for="mce-EMAIL">Newsletter abbonieren</label>-->
-                                    	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Mailadresse eingeben" required>
-                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a5275cd120ef312863a46429d_5425da3d2d" tabindex="-1" value=""></div>
-                                        <div class="clear"><input type="submit" value="Newsletter abbonieren" name="abbonieren" id="mc-embedded-subscribe" class="button"></div>
-                                        </div>
-                                    </form>
+                                <form action="https://arche-augsburg.us9.list-manage.com/subscribe/post?u=a5275cd120ef312863a46429d&amp;id=5425da3d2d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group">
+                                	<input type="email" value="" name="EMAIL" class="required email" placeholder="Deine Mailadresse" id="mce-EMAIL">
                                 </div>
-                                
+                                <div class="mc-field-group">
+                                	<input type="text" value="" name="FNAME" class="required name" placeholder="Dein Vorname" id="mce-FNAME">
+                                </div>
+                                	<div id="mce-responses" class="clear">
+                                		<div class="response" id="mce-error-response" style="display:none"></div>
+                                		<div class="response" id="mce-success-response" style="display:none"></div>
+                                	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a5275cd120ef312863a46429d_5425da3d2d" tabindex="-1" value=""></div>
+                                    <div class="clear"><input type="submit" value="Newsletter abonnieren" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                    </div>
+                                </form>
+                                </div>
                             <!--End mc_embed_signup-->
 					    </div>
 					    <div class=" col-sm-6 col-sm-pull-6">
