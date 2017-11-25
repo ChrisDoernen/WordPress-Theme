@@ -82,6 +82,9 @@ function create_posttype() {
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-megaphone',
+            'show_in_rest'       => true,
+      		'rest_base'          => 'events-api',
+      		'rest_controller_class' => 'WP_REST_Posts_Controller',
         )
     );
 }
@@ -617,4 +620,64 @@ add_shortcode( 'button', 'button_func' );
  */ 
  include 'post-like.php';
  
+ 
+ /**
+ * Add meta_fiels to Rest API response
+ */ 
+add_action( 'rest_api_init', function () {
+	register_rest_field( 
+		'events',
+		'eventStartDatetime',
+		array(
+			'get_callback' => 'get_event_startdatetime',
+			'update_callback' => null,
+			'schema' => array(
+    			'description' => __( 'Event start datetime' ),
+    			'type'        => 'string'
+    		),
+    ) );
+} );
+
+add_action( 'rest_api_init', function () {
+	register_rest_field( 
+		'events',
+		'eventEndDatetime',
+		array(
+			'get_callback' => 'get_event_enddatetime',
+			'update_callback' => null,
+			'schema' => array(
+    			'description' => __( 'Event end datetime' ),
+    			'type'        => 'string'
+    		),
+    ) );
+} );
+
+add_action( 'rest_api_init', function () {
+	register_rest_field( 
+		'events',
+		'eventArtwork',
+		array(
+			'get_callback' => 'get_event_artwork',
+			'update_callback' => null,
+			'schema' => array(
+    			'description' => __( 'Event artwork' ),
+    			'type'        => 'integer'
+    		),
+    ) );
+} );
+
+function get_event_startdatetime($post, $field_name, $request) {
+	return get_post_meta($post['id'], 'ctdn_event_start_datetime', true );
+}
+
+function get_event_enddatetime($post, $field_name, $request) {
+	return get_post_meta($post['id'], 'ctdn_event_end_datetime', true );
+}
+
+function get_event_artwork($post, $field_name, $request) {
+	return get_post_meta($post['id'], 'ctdn_event_gx', true );
+}
+
+ 
+
  
