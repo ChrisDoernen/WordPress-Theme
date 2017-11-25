@@ -26,7 +26,7 @@ add_filter('login_errors', 'login_error_override');
 function enqueue_styles_and_scripts() {
 	wp_enqueue_style( 'bootstrap-min', get_template_directory_uri().'/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-improve', get_template_directory_uri().'/css/bootstrap-improve.css' );
-	wp_enqueue_style( 'mailchimp', 'https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css' );
+	wp_enqueue_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-10_7.css' );
 	wp_enqueue_style( 'arche-theme', get_stylesheet_uri() );
     wp_enqueue_style( 'backTop', get_template_directory_uri().'/css/backTop.css' );
     wp_enqueue_style( 'simle-likes', get_template_directory_uri().'/css/simple-likes-public.css' );
