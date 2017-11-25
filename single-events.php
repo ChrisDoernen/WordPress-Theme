@@ -111,11 +111,16 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+	
+	<section class="section section--less-margin centered background-grey diagonal-top">
+		<div class="container container-ms">	
 			<div class="row">
 				<div class="col-xs-12 centered">
-					<a href="<?php echo home_url();?>/events-termine" class="btn btn-default" role="button">zurück zu Events und Termine</a>
+				    <a href="<?php echo esc_url( home_url( '/' ) ).'events-termine/'; ?>" class="btn btn-default" role="button">Events & Termine</a>
 				</div>
-			</div>
+			</div>	
 		</div>
 	</section>
 	
