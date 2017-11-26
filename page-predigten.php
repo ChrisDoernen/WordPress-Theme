@@ -34,7 +34,7 @@
 					<div class="row">
                         <div class="col-xs-12 left">
                             <?php
-                                $files = glob('/www/htdocs/w00700fe/live_podcast/*.{mp3}', GLOB_BRACE);
+                                $files = glob('__pathToPodcastDirectory__/*.{mp3}', GLOB_BRACE);
                                 
                                 $sermons = [];
                                 foreach($files as $file) {
