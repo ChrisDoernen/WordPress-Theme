@@ -1417,7 +1417,7 @@ Custom, iPhone Retina XS
     }
     
     .welcome__title {
-        font-weight: 700;
+        font-weight: 600;
     }
     
     h2 {
@@ -1568,6 +1568,13 @@ Extra Small Devices, Phones
         font-size: 0.93rem;
     }
     
+    .menu ul li a,
+    .section__heading, 
+    .frontpageHeading,
+    h1 {
+        font-weight: 500;
+    }
+    
 }
 
 /**
@@ -1632,15 +1639,8 @@ Extra Small Devices, Phones
         height: 80px;
     }
     
-    .menu ul li a,
-    .section__heading, 
-    .frontpageHeading,
-    h1 {
-        font-weight: 500;
-    }
-    
     .welcome__title {
-        font-weight: 600;
+        font-weight: 500;
     }
 }
 
