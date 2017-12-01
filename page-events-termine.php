@@ -64,8 +64,6 @@
                                         $url = $images[$firstKey]['url'];
                                         $title = get_the_title();
                                         
-                                        setlocale(LC_TIME, "de_DE.UTF-8");
-                                        date_default_timezone_set('Europe/Berlin');
                                         $date = date_create();
                                         $startDate = substr(rwmb_meta ('ctdn_event_start_datetime'), 0, -6)/1000;
                                         $endDate = substr(rwmb_meta ('ctdn_event_end_datetime'), 0, -6)/1000;

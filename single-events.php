@@ -36,9 +36,7 @@
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<div class="event__infos">
-    						    <?php 
-    						        setlocale(LC_TIME, "de_DE.UTF-8");
-									date_default_timezone_set('Europe/Berlin');
+    						    <?php
 									$date = date_create();
 									$start = rwmb_meta ('ctdn_event_start_datetime');
 									$end = rwmb_meta ('ctdn_event_end_datetime');
@@ -49,13 +47,13 @@
 									$endTimeHours = substr(rwmb_meta ('ctdn_event_end_datetime'), -5, 2);
 									$endTimeMinutes = substr(rwmb_meta ('ctdn_event_end_datetime'), -2);
 									
-									// Datum und Uhrzeit sind gleich
+									// Start- und Endzeit sind identisch
 									if ($start === $end || $endDate == '')
 									{
 									    $datetime = strftime('%a, %d. %b', $startDate).', '.$startTimeHours.':'.$startTimeMinutes.' Uhr';
 									    $endDate = $startDate;
 									}
-									// Uhrzeit unterscheidet sich
+									// Uhrzeit unterscheidet sich, Datum ist gleich
 									elseif ($startDate === $endDate && $start != $end)
 									{
 									    $datetime = strftime('%a, %d. %b', $startDate).', '.$startTimeHours.':'.$startTimeMinutes.' Uhr - '.$endTimeHours.':'.$endTimeMinutes.' Uhr';
@@ -73,12 +71,12 @@
 									    $datetime = strftime('%d. %b', $startDate).', '.$startTimeHours.':'.$startTimeMinutes.' Uhr - '.strftime('%d. %b', $endDate).', '.$endTimeHours.':'.$endTimeMinutes.' Uhr';
 									}
 								?>
-                                <? if($endDate+86400 < time()){ $isOver = true;?>
+                                <?php if($endDate+86400 < time()){ $isOver = true;?>
                                     <span class="event-over">
                                         <i class="fa fa-exclamation-circle"></i> 
-                                        Das Event liegt in der Vergangenheit
+                                        Das Event liegt in der Vergangenheit 
                                     </span>
-                                <?}?>
+                                <?php }?>
     						    <h5 class="event__date"><?php echo $datetime; ?></h5>
 								<h1 id="" class='event__heading'><?php echo get_the_title();?></h1>
 								<div class="event__location"><i class="fa fa-map-marker"></i>&nbsp;

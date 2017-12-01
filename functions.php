@@ -1,6 +1,14 @@
 <?php
 
-// Hide Admin Bar
+/**
+ * Set locale and timezone
+ */
+setlocale(LC_TIME, "de_DE.utf-8");
+date_default_timezone_set('Europe/Berlin');
+
+/**
+ * Hide Admin Bar
+ */ 
 add_filter('show_admin_bar', '__return_false');
 
 function arche_theme_setup (){
