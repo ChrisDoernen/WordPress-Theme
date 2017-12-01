@@ -99,7 +99,7 @@
                                     $kb_description = html_entity_decode(strip_tags($content), ENT_COMPAT, 'UTF-8');
                                     $kb_url = get_permalink();
                                     $kb_file_name = date('Ymd', $startDate).'-'.html_entity_decode($slug);
-                                    $fileName = '__pathToIcalDirectory__/'.$kb_file_name.'.ics';
+                                    $fileName = get_home_path().'/../ical/'.$kb_file_name.'.ics';
                                     
                                     include (get_template_directory().'/ical-export.php');
                                 ?>
