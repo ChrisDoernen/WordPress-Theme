@@ -34,19 +34,15 @@
 					<div class="row">
                         <div class="col-xs-12 left">
                             <?php
-                                $files = glob(get_home_path().'/../podcast/*.{mp3}', GLOB_BRACE);
-                                
+                                $sermonDirectory = get_home_path().'/../podcast/*/*.mp3';
                                 $sermons = [];
-                                foreach($files as $file) {
-                                    $fileName = substr($file, 34);
-                                    $sermon['fileName'] = $fileName;
-                                    $split = explode("-", $fileName);
-                                    $date = DateTime::createFromFormat('Ymd', $split[0]);
-                                    $sermon['date'] = $date;
-                                    $preacher = $split[1];
-                                    $sermon['preacher'] = $preacher;
-                                    $title = explode(".", $split[2])[0];
-                                    $sermon['title'] = $title;
+                                
+                                foreach(glob($sermonDirectory) as $file) {
+                                    $split = explode("_", basename($file));
+                                    $sermon['date'] = date_create_from_format('Y-m-d', $split[0]);
+                                    $sermon['preacher'] = $split[1];
+                                    $sermon['fileName'] = basename($file);
+                                    $sermon['title'] = explode(".", $split[2])[0];
                                     
                                     array_push($sermons, $sermon);
                                 }
