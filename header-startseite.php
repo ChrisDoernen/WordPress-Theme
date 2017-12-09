@@ -18,7 +18,8 @@
         <div class="">
             <div class="translation__icon">
                 <a href="https://arche-augsburg.de/english">
-                    <img class="img-responsive " src="https://arche-augsburg.de/wp-content/themes/arche-theme/img/TranslationBubbles2.jpg"></img></a>
+                    <img class="img-responsive " src="<?php echo get_stylesheet_directory_uri(); ?>/img/TranslationBubbles2.jpg"></img>
+                </a>
             </div>
             <div class="translation__text hidden-xs">
                 <a href="https://arche-augsburg.de/english">Welcome to <br> our church</a>
