@@ -34,7 +34,7 @@
 					<div class="row">
                         <div class="col-xs-12 left">
                             <?php
-                                $sermonDirectory = get_home_path().'/../podcast/*/*.mp3';
+                                $sermonDirectory = get_home_path().'/../live_podcast/*/*.mp3';
                                 $sermons = [];
                                 
                                 foreach(glob($sermonDirectory) as $file) {
