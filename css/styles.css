@@ -900,7 +900,7 @@ blockquote {
     border-left: 3px solid #f9f9f9;
     margin: 30px 10px;
     padding-left: 5%;
-    padding-right: 12%;
+    padding-right: 7%;
     font-size: inherit;
     line-height: inherit;
     font-style: italic;
@@ -924,15 +924,6 @@ blockquote p {
     margin-bottom: 10px;    
 }
 
-@media (max-width: 400px) {
-    blockquote {
-        padding: 10px;
-    }
-    
-    blockquote:before {
-        display: none;
-    }
-}
 
 /*
  * Header and navigation
