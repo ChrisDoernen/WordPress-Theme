@@ -20,21 +20,21 @@
 	                <div class="row">
                 		<div class="col-xs-12">
 							<div class="post__meta ">
-							    <? $categories = get_the_category(); if (!empty($categories)) {?>
+							    <?php $categories = get_the_category(); if (!empty($categories)) {?>
                                     <span class="meta-info post__meta--darker-color">
-                                        <a href="<? echo home_url().'/'.esc_html( $categories[0]->slug ) ?>">
-                                            <? echo esc_html( $categories[0]->name );?>
+                                        <a href="<?php echo home_url().'/'.esc_html( $categories[0]->slug ) ?>">
+                                            <?php echo esc_html( $categories[0]->name );?>
                                         </a>
                                     </span>/
-                                <? }?>
+                                <?php }?>
                                 <span class="meta-info">
-                                    <? echo do_shortcode('[jmliker]'); ?>
+                                    <?php echo do_shortcode('[jmliker]'); ?>
                                 </span>/
 								<span class="meta-info">
-								    <? echo get_the_date();?> 
+								    <?php echo get_the_date();?> 
 								</span>/
     							<span class="meta-info">
-    								von <? echo the_author_meta('display_name', $authorId); ?>
+    								von <?php echo the_author_meta('display_name', $authorId); ?>
     							</span>
 							</div>
 						</div>
