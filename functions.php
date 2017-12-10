@@ -52,9 +52,9 @@ function enqueue_styles_and_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_styles_and_scripts' );
 
-
-//ändern vom Logo im Admin-Bereich
-
+/**
+ * Change login page logo
+ */
 function my_custom_login() {
 echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/css/backend-login.css" />';
 }
@@ -71,7 +71,9 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
-// Custom Type: Events
+/**
+ * Create custom type for events
+ */
 function create_posttype() {
     register_post_type( 'events',
         array(
@@ -113,8 +115,9 @@ add_action('init', 'create_event_taxonomy');
 
 
 
-// Meta boxes auf pages im backend
-
+/**
+ * Define meta boxes
+ */
 add_filter( 'rwmb_meta_boxes', 'YOURPREFIX_register_meta_boxes' );
 function YOURPREFIX_register_meta_boxes( $meta_boxes ) {
     $prefix = '';
@@ -587,7 +590,7 @@ function rw_maybe_include( $conditions ) {
 					return true;
 				}
 				break;
-			case 'category': // post must be saved or published first
+			case 'category': // Post must be saved or published first
 				$categories = get_the_category( $post->ID );
 				$catslugs   = array();
 				foreach ( $categories as $category ) {
@@ -603,14 +606,16 @@ function rw_maybe_include( $conditions ) {
 					return true;
 				}
 				break;
-		}// End switch().
-	}// End foreach().
+		} // End switch().
+	} // End foreach().
 	// If no condition matched
 	return false;
 }
 
 
-// [bartag foo="foo-value"]
+/**
+ * Button shortcode
+ */
 function button_func( $atts ) {
     $a = shortcode_atts( array(
         'link-text' => '',
