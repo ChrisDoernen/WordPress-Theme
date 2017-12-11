@@ -503,8 +503,8 @@ $meta_boxes[] = array(
 				'js_options' => array(
 					'showTimepicker' => true,
 					'stepMinute' => '5',
-					'separator' => '-',
-					'dateFormat' => '@',
+					'separator' => ', ',
+					'dateFormat' => 'yymmdd',
 					'timeFormat' => 'HH:mm',
 					'regional' => 'de',
 				),
@@ -519,8 +519,8 @@ $meta_boxes[] = array(
 				'js_options' => array(
 					'showTimepicker' => true,
 					'stepMinute' => '5',
-					'separator' => '-',
-					'dateFormat' => '@',
+					'separator' => ', ',
+					'dateFormat' => 'yymmdd',
 					'timeFormat' => 'HH:mm',
 					'regional' => 'de',
 				),
@@ -529,7 +529,6 @@ $meta_boxes[] = array(
 				'name'       => 'Location',
 				'id'         => 'ctdn_event_location',
 				'type'       => 'text',
-				
 			),
 		),
 	);

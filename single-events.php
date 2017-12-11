@@ -38,71 +38,76 @@
 							<div class="event__infos">
     						    <?php
 									$date = date_create();
-									$start = rwmb_meta ('ctdn_event_start_datetime');
-									$end = rwmb_meta ('ctdn_event_end_datetime');
-									$startDate = substr(rwmb_meta ('ctdn_event_start_datetime'), 0, -6)/1000;
-									$endDate = substr(rwmb_meta ('ctdn_event_end_datetime'), 0, -6)/1000;
-									$startTimeHours = substr(rwmb_meta ('ctdn_event_start_datetime'), -5, 2);
-									$startTimeMinutes = substr(rwmb_meta ('ctdn_event_start_datetime'), -2);
-									$endTimeHours = substr(rwmb_meta ('ctdn_event_end_datetime'), -5, 2);
-									$endTimeMinutes = substr(rwmb_meta ('ctdn_event_end_datetime'), -2);
+									$start = (rwmb_meta('ctdn_event_start_datetime') !== '') 
+										? date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_start_datetime'))
+										: false;
 									
-									// Start- und Endzeit sind identisch
-									if ($start === $end || $endDate == '')
+									$end = (rwmb_meta('ctdn_event_end_datetime') !== '')
+										? date_create_from_format('Ymd, G:i', rwmb_meta ('ctdn_event_end_datetime'))
+										: false;
+									
+									// If there is no start, we can not display it.
+									if(empty($start)) 
 									{
-									    $datetime = strftime('%a, %d. %b', $startDate).', '.$startTimeHours.':'.$startTimeMinutes.' Uhr';
-									    $endDate = $startDate;
+										$datetime = false;
 									}
-									// Uhrzeit unterscheidet sich, Datum ist gleich
-									elseif ($startDate === $endDate && $start != $end)
+									// Start and end are the same or no end provided
+									elseif (empty($end) || $start === $end) 
 									{
-									    $datetime = strftime('%a, %d. %b', $startDate).', '.$startTimeHours.':'.$startTimeMinutes.' Uhr - '.$endTimeHours.':'.$endTimeMinutes.' Uhr';
+									    $datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp());
+									    $end = $start; // isOver flag relies on end so we need it
 									}
+									// Start and end date are the same, time is different
+									elseif ($start->format('Ymd') == $end->format('Ymd')) 
+									{
+									    $datetime = strftime('%a, %d. %b, %H:%M', $start->getTimestamp()).' - '.strftime('%H:%M Uhr', $end->getTimestamp());
+									}
+									// Start and end have different dates
 									else 
 									{
-									    $startDayOfMonth = date('d', $startDate);
-									    $startMonthOfYear = date('m', $startDate);
-									    $startYear = date('Y', $startDate);
-									    $endDayOfMonth = date('d', $endDate);
-									    $endMonthOfYear = date('m', $endDate);
-									    $endYear = date('Y', $endDate);
-									    $nowYear = date('Y');
-									    
-									    $datetime = strftime('%d. %b', $startDate).', '.$startTimeHours.':'.$startTimeMinutes.' Uhr - '.strftime('%d. %b', $endDate).', '.$endTimeHours.':'.$endTimeMinutes.' Uhr';
+									    $datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp()).' - '.strftime('%a, %d. %b, %H:%M Uhr', $end->getTimestamp());
 									}
 								?>
-                                <?php if($endDate+86400 < time()){ $isOver = true;?>
+                                <?php if($end->getTimestamp() < time()){ $isOver = true;?>
                                     <span class="event-over">
                                         <i class="fa fa-exclamation-circle"></i> 
-                                        Das Event liegt in der Vergangenheit 
+                                        Das Event liegt in der Vergangenheit. 
                                     </span>
                                 <?php }?>
-    						    <h5 class="event__date"><?php echo $datetime; ?></h5>
+                                <?php if(!empty($datetime)){?>
+	                               <h5 class="event__date"><?php echo $datetime; ?></h5>
+								<?php }?>
 								<h1 id="" class='event__heading'><?php echo get_the_title();?></h1>
-								<div class="event__location"><i class="fa fa-map-marker"></i>&nbsp;
+								<div class="event__location">
+									<i class="fa fa-map-marker"></i> &nbsp;
 								    <a href="https://www.google.de/maps/search/<?php echo str_replace("<br>", "", rwmb_meta ('ctdn_event_location')); ?>" class="event__link" target="_blank">
 								        <?php echo rwmb_meta ('ctdn_event_location'); ?>
-								    </a></div>
+								    </a>
+								</div>
                                 <?php
                                     $post = get_post($siteId);
                                     $content = apply_filters('the_content', $post->post_content);
                                     echo $content;
                                 ?>
                                 <?php
-                                    $kb_start = date('Ymd', $startDate).'T'.$startTimeHours.$startTimeMinutes.'00';
-                                    $kb_end = date('Ymd', $endDate).'T'.$endTimeHours.$endTimeMinutes.'00';
-                                    $kb_current_time = '20161026T130000';
-                                    $kb_title = html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8');
-                                    $kb_location = preg_replace('/([\,;])/','\\\$1',str_replace("<br>", ", ",rwmb_meta ('ctdn_event_location'))); 
-                                    $kb_description = html_entity_decode(strip_tags($content), ENT_COMPAT, 'UTF-8');
-                                    $kb_url = get_permalink();
-                                    $kb_file_name = date('Ymd', $startDate).'-'.html_entity_decode($slug);
-                                    $fileName = get_home_path().'/../live_ical/'.$kb_file_name.'.ics';
-                                    
-                                    include (get_template_directory().'/ical-export.php');
+                                	if(!empty($datetime))
+                                	{
+	                                    $kb_start = strftime('%Y%m%dT%H%M%S', $start->getTimestamp());
+	                                    $kb_end = strftime('%Y%m%dT%H%M%S', $end->getTimestamp());
+	                                    $kb_current_time = '20161026T130000';
+	                                    $kb_title = html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8');
+	                                    $kb_location = preg_replace('/([\,;])/','\\\$1',str_replace("<br>", ", ",rwmb_meta ('ctdn_event_location'))); 
+	                                    $kb_description = html_entity_decode(strip_tags($content), ENT_COMPAT, 'UTF-8');
+	                                    $kb_url = get_permalink();
+	                                    $kb_file_name = date('Ymd', $startDate).'-'.html_entity_decode($slug);
+	                                    $fileName = get_home_path().'/../live_ical/'.$kb_file_name.'.ics';
+	                                    
+	                                    include (get_template_directory().'/ical-export.php');
                                 ?>
                                 <h6>Zu deinem Kalender hinzufügen <a href="https://de.wikipedia.org/wiki/ICalendar" target="_blank"><i class="fa fa-question-circle"></i></a></h6>
+                                <?php } ?>
                                 <a class="ical-link" href="http://termine.arche-augsburg.de/<? echo $kb_file_name; ?>">iCal-Link</a>
+                                
                                 <?php echo do_shortcode('[shariff headline="<h6>Dieses Event teilen</h6>"]')?>
 							</div>
 						</div>

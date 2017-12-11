@@ -44,9 +44,7 @@
                                         ),
                                     )
                                 );
-    							
-    							$featuredImages = array();
-    							
+                                
     							$the_query = new WP_Query ($argu);
     							if ($the_query->have_posts())
     							{
@@ -65,48 +63,43 @@
                                         $title = get_the_title();
                                         
                                         $date = date_create();
-                                        $startDate = substr(rwmb_meta ('ctdn_event_start_datetime'), 0, -6)/1000;
-                                        $endDate = substr(rwmb_meta ('ctdn_event_end_datetime'), 0, -6)/1000;
+                                        $start = date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_start_datetime'));
+                                        $end = date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_end_datetime'));
                                         
-                                        // Datetime for displaying months 
+                                        // Datetime for displaying months
                                         $globalMonth = $currentMonth;
                                         
-                                        if ($startDate === $endDate || $endDate == '')
-                                        {
-                                            $datetime = strftime('%a, %d. %b', $startDate);
-                                            $endDate = $startDate;
+                                        // Start and end date are the same
+    									if (empty($end) || $start->format('Ymd') == $end->format('Ymd')) 
+    									{
+                                            $datetime = strftime('%a, %d. %b', $start->getTimestamp());
+                                            $end = $start;
                                         }
+                                        // Start and end date are different
                                         else 
                                         {
-                                            $startDayOfMonth = date('d', $startDate);
-                                            $startMonthOfYear = date('m', $startDate);
-                                            $startYear = date('Y', $startDate);
-                                            $endDayOfMonth = date('d', $endDate);
-                                            $endMonthOfYear = date('m', $endDate);
-                                            $endYear = date('Y', $endDate);
-                                            $nowYear = date('Y');
-                                            
-                                            if($startMonthOfYear == $endMonthOfYear)
+                                            // Same month
+                                            if($start->format('Ym') == $end->format('Ym'))
                                             {
-                                                $datetime = strftime('%a, %d.', $startDate).' - '.strftime('%a, %d. %b', $endDate);
+                                                $datetime = strftime('%a, %d.', $start->getTimestamp()).' - '.strftime('%a, %d. %b', $end->getTimestamp());
                                             }
-                                            
-                                            if($endYear !== $nowYear)
+                                            // Different month
+                                            else
                                             {
-                                                $datetime = $datetime.' '.strftime('%Y', $endDate);
+                                                $datetime = strftime('%a, %d. %b', $start->getTimestamp()).' - '.strftime('%a, %d. %b', $end->getTimestamp());
                                             }
                                         }
                                         
-                                        if($endDate+86400 < time())
+                                        if($end->getTimestamp() < time())
                                         {
                                             $eventIsOver = true;
                                         }
                                         
-                                        $currentMonth = strftime('%m', $startDate);
+                                        $currentMonth = strftime('%m', $start->getTimestamp());
                                         
                                         if($globalMonth != $currentMonth)
                                         {
-                                          echo '<div class="month-changing"><span>'.strftime('%B', $startDate).'</span></div>';   
+                                          echo '<div class="month-changing"><span>'.strftime('%B', $start->getTimestamp()).'</span></div>';   
                                         }
                                         
                                         include (get_template_directory().'/card-events.php');
