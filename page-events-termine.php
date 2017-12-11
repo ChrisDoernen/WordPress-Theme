@@ -34,7 +34,7 @@
                                     'orderby' => 'meta_value_num', 
                                     'meta_key'=> 'ctdn_event_start_datetime',
                                     'order' => 'ASC',
-                                    'meta_value' => strtotime("-2 week"),
+                                    'meta_value' => strftime('%Y%m%d, 00:00', strtotime("-2 week")),
                                     'meta_compare' => '>',
                                     'tax_query' => array(
                                     array(
