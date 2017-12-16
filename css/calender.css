@@ -219,6 +219,19 @@ input:checked + .slider:before {
      margin: 20px 0 0 0;   
 }
 
+#events_wrap table.largecalendar tbody td {
+    height: 110px;
+    border: 1px solid #dadada;
+}
+
+#events_wrap table td.day6, table.ical td.day7 {
+    background: #f9f9f9;
+}
+
+caption {
+    color: #9a9a9a;
+}
+
 @media print {
     .page {
         margin: 0;
