@@ -74,7 +74,7 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 /**
  * Create custom type for events
  */
-function create_posttype() {
+function create_posttype_events() {
     register_post_type( 'events',
         array(
             'labels' => array(
@@ -98,8 +98,11 @@ function create_posttype() {
         )
     );
 }
-add_action( 'init', 'create_posttype', 0 );
+add_action( 'init', 'create_posttype_events', 0 );
 
+/**
+ * Create taxonomy for events
+ */
 function create_event_taxonomy() {
     register_taxonomy(
         'Anzeigeeinstellungen',
@@ -112,6 +115,61 @@ function create_event_taxonomy() {
     );
 }
 add_action('init', 'create_event_taxonomy');
+
+/**
+ * Create custom type for jobs
+ */
+function create_posttype_jobs() {
+    register_post_type( 'jobs',
+        array(
+            'labels' => array(
+                'name' => __( 'Jobs' ),
+                'singular_name' => __( 'Job' )
+            ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'jobs'),
+            'supports' => array('title', 'editor', 'page-attributes',),
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-heart',
+            'show_in_rest'       => true,
+      		'rest_base'          => 'jobs-api',
+      		'rest_controller_class' => 'WP_REST_Posts_Controller',
+        )
+    );
+}
+add_action( 'init', 'create_posttype_jobs', 0 );
+
+/**
+ * Create taxonomy for jobs
+ */
+function create_jobs_taxonomy() {
+    register_taxonomy(
+        'Job-Kategorie',
+        'jobs',
+        array(
+            'label' => __( 'Job-Kategorien' ),
+            'rewrite' => array( 'slug' => 'job-kategorien' ),
+            'hierarchical' => true,
+        )
+    );
+    
+    register_taxonomy(
+        'Arbeitsbereich',
+        'jobs',
+        array(
+            'label' => __( 'Arbeitsbereich' ),
+            'rewrite' => array( 'slug' => 'arbeitsbereich' ),
+            'hierarchical' => true,
+        )
+    );
+}
+add_action('init', 'create_jobs_taxonomy');
 
 
 
@@ -529,6 +587,34 @@ $meta_boxes[] = array(
 				'name'       => 'Location',
 				'id'         => 'ctdn_event_location',
 				'type'       => 'text',
+			),
+		),
+	);
+	
+// Meta Boxes auf Jobs	
+	
+	$meta_boxes[] = array(
+		'title'    => 'Angaben zum Job',
+        'post_types' => array( 'jobs' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+        	array (
+				'name'        => 'Geschätzte Stunden Pro Woche',
+			    'id'          => 'ctdn_job_estimatedTime',
+			    'type'        => 'text',
+		    ),
+		    array (
+				'name'        => 'Leiter',
+			    'id'          => 'ctdn_job_organizationalUnitLeader',
+			    'type'        => 'text',
+		    ),
+			array (
+				'name'  => 'Bild des Leiters',
+				'id'    => 'ctdn_job_ouLeaderImage',
+				'type'  => 'image_advanced',
+				'max_file_uploads' => '1',
+				'force_delete' => false,
 			),
 		),
 	);
