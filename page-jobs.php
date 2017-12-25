@@ -29,7 +29,9 @@
 				</div>
 			</div>	
 		</div>
-		
+	</section>
+	
+	<section class="section section--less-margin background-grey diagonal-top">
 		<div class="container container-ms">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

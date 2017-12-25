@@ -114,7 +114,7 @@ function create_event_taxonomy() {
         )
     );
 }
-add_action('init', 'create_event_taxonomy');
+add_action('init', 'create_event_taxonomy', 0);
 
 /**
  * Create custom type for jobs
@@ -163,13 +163,13 @@ function create_jobs_taxonomy() {
         'Arbeitsbereich',
         'jobs',
         array(
-            'label' => __( 'Arbeitsbereich' ),
+            'label' => __( 'Arbeitsbereiche' ),
             'rewrite' => array( 'slug' => 'arbeitsbereich' ),
             'hierarchical' => true,
         )
     );
 }
-add_action('init', 'create_jobs_taxonomy');
+add_action('init', 'create_jobs_taxonomy', 0);
 
 
 
@@ -592,6 +592,20 @@ $meta_boxes[] = array(
 	);
 	
 // Meta Boxes auf Jobs	
+	
+	$meta_boxes[] = array(
+		'title'    => 'Kurzbeschreibung',
+        'post_types' => array( 'jobs' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+        	array(
+			'name'  => 'Knappe Beschreibung des Jobs für die Übersicht.',
+			'id'    => 'ctdn_job_desc',
+			'type' => 'textarea',
+			),
+		),
+	);
 	
 	$meta_boxes[] = array(
 		'title'    => 'Angaben zum Job',
