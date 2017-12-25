@@ -1339,8 +1339,56 @@ blockquote p {
     color: white;
 }
 
+<<<<<<< HEAD
 /**
  * Jobs
+=======
+<<<<<<< Updated upstream
+/*
+=======
+/**
+ * Jobs
+ */
+
+.job {
+    height: 160px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 15px 10px 0 10px;
+    margin: 15px 0;
+}
+
+.job h3 {
+    margin: 2px 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.job p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.job__category{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    margin: 0 3px 0 0;
+}
+
+.job__time{
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+}
+
+
+
+/**
+>>>>>>> Stashed changes
+ * Responsive
+>>>>>>> development
  */
 
 .job {

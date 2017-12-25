@@ -22,7 +22,7 @@
 							<div class="post__meta ">
 							    <?php $categories = get_the_category(); if (!empty($categories)) {?>
                                     <span class="meta-info post__meta--darker-color">
-                                        <a href="<?php echo home_url().'/'.esc_html( $categories[0]->slug ) ?>">
+                                        <a href="<?php echo get_category_link( $categories[0]->cat_ID ) ?>">
                                             <?php echo esc_html( $categories[0]->name );?>
                                         </a>
                                     </span>/

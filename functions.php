@@ -87,8 +87,11 @@ function create_posttype_events() {
             'show_in_menu'        => true,
             'show_in_nav_menus'   => true,
             'show_in_admin_bar'   => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'events'),
+            'has_archive' => false,
+            'rewrite' => array(
+            	'slug' => 'events-termine',
+            	'with_front'  => false,
+            	),
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-megaphone',
@@ -114,6 +117,12 @@ function create_event_taxonomy() {
         )
     );
 }
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+add_action('init', 'create_event_taxonomy');
+=======
+>>>>>>> development
 add_action('init', 'create_event_taxonomy', 0);
 
 /**
@@ -132,8 +141,16 @@ function create_posttype_jobs() {
             'show_in_menu'        => true,
             'show_in_nav_menus'   => true,
             'show_in_admin_bar'   => true,
+<<<<<<< HEAD
             'has_archive' => true,
             'rewrite' => array('slug' => 'jobs'),
+=======
+            'has_archive' => false,
+            'rewrite' => array(
+            	'slug' => 'jobs',
+            	'with_front'  => false,
+            	),
+>>>>>>> development
             'supports' => array('title', 'editor', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-heart',
@@ -170,6 +187,10 @@ function create_jobs_taxonomy() {
     );
 }
 add_action('init', 'create_jobs_taxonomy', 0);
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> development
 
 
 
