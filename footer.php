@@ -17,7 +17,7 @@
                             <h4>Sitemap</h4>
                             <ul>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>'>Home</a></li>
-                                <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>kirche-und-glaube/jesus/'>Jesus</a></li>
+                                <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>news-blog/jesus/'>Jesus</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>ueber-uns'>Über Uns</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>gottesdienst'>Gottesdienst</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>events-termine'>Events & Termine</a></li>

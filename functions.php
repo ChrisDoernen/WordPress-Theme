@@ -87,8 +87,11 @@ function create_posttype() {
             'show_in_menu'        => true,
             'show_in_nav_menus'   => true,
             'show_in_admin_bar'   => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'events'),
+            'has_archive' => false,
+            'rewrite' => array(
+            	'slug' => 'events-termine',
+            	'with_front'  => false,
+            	),
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-megaphone',
@@ -111,7 +114,69 @@ function create_event_taxonomy() {
         )
     );
 }
+<<<<<<< Updated upstream
 add_action('init', 'create_event_taxonomy');
+=======
+add_action('init', 'create_event_taxonomy', 0);
+
+/**
+ * Create custom type for jobs
+ */
+function create_posttype_jobs() {
+    register_post_type( 'jobs',
+        array(
+            'labels' => array(
+                'name' => __( 'Jobs' ),
+                'singular_name' => __( 'Job' )
+            ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'has_archive' => false,
+            'rewrite' => array(
+            	'slug' => 'jobs',
+            	'with_front'  => false,
+            	),
+            'supports' => array('title', 'editor', 'page-attributes',),
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-heart',
+            'show_in_rest'       => true,
+      		'rest_base'          => 'jobs-api',
+      		'rest_controller_class' => 'WP_REST_Posts_Controller',
+        )
+    );
+}
+add_action( 'init', 'create_posttype_jobs', 0 );
+
+/**
+ * Create taxonomy for jobs
+ */
+function create_jobs_taxonomy() {
+    register_taxonomy(
+        'Job-Kategorie',
+        'jobs',
+        array(
+            'label' => __( 'Job-Kategorien' ),
+            'rewrite' => array( 'slug' => 'job-kategorien' ),
+            'hierarchical' => true,
+        )
+    );
+    
+    register_taxonomy(
+        'Arbeitsbereich',
+        'jobs',
+        array(
+            'label' => __( 'Arbeitsbereiche' ),
+            'rewrite' => array( 'slug' => 'arbeitsbereich' ),
+            'hierarchical' => true,
+        )
+    );
+}
+add_action('init', 'create_jobs_taxonomy', 0);
+>>>>>>> Stashed changes
 
 
 
