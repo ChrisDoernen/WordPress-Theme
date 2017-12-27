@@ -42,7 +42,7 @@
                 	<div class="row">
                 		<div class="col-xs-12">
 							<div class="">
-								 <h1 class='pageTitle left'><?php echo get_the_title();?></h1>
+								 <h1 class='left'><?php echo get_the_title();?></h1>
 								 <h2 ><?php echo rwmb_meta('ctdn_SubTitle'); ?></h2>
 							</div>
 						</div>

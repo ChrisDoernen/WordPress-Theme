@@ -1339,61 +1339,18 @@ blockquote p {
     color: white;
 }
 
-<<<<<<< HEAD
-/**
- * Jobs
-=======
-<<<<<<< Updated upstream
-/*
-=======
 /**
  * Jobs
  */
 
-.job {
-    height: 160px;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    padding: 15px 10px 0 10px;
-    margin: 15px 0;
+
+.job-filter {
+    margin: 35px 0;
 }
-
-.job h3 {
-    margin: 2px 0 10px 0;
-    font-size: 1.1rem;
-}
-
-.job p {
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-.job__category{
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    padding: 2px 5px;
-    font-size: 0.8rem;
-    margin: 0 3px 0 0;
-}
-
-.job__time{
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    padding: 2px 5px;
-    font-size: 0.8rem;
-}
-
-
-
-/**
->>>>>>> Stashed changes
- * Responsive
->>>>>>> development
- */
 
 .job {
-    height: 160px;
-    border: 1px solid lightgray;
+    height: 120px;
+    border-top: 1px solid lightgray;
     border-radius: 3px;
     padding: 15px 10px 0 10px;
     margin: 5px 0;
@@ -1401,30 +1358,78 @@ blockquote p {
 
 .job h3 {
     margin: 2px 0 10px 0;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .job p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
-.job__category{
+.job-tag {
     border: 1px solid lightgray;
     border-radius: 3px;
-    padding: 2px 5px;
-    font-size: 0.8rem;
+    padding: 1px 5px;
+    font-size: 0.9rem;
     margin: 0 3px 0 0;
+}
+
+.job__category{
+}
+
+.job__ou {
 }
 
 .job__time{
     border: 1px solid lightgray;
     border-radius: 3px;
     padding: 2px 5px;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
+.job__date {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #a7a7a7;
+    margin-top: 10px;
+}
 
+.job__meta-box {
+    background-color: #efefef;
+    border-radius: 2px;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.job__meta-box p {
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.job-meta-info {
+    font-style: italic;
+}
+
+.job__title {
+    margin-bottom: 30px;
+}
+
+.job__content {
+    margin: 0 0 0 0;
+    padding-right: 30px;
+}
+
+.job__leaderImage {
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
 
 /**
  * Responsive

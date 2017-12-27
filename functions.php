@@ -181,6 +181,54 @@ add_action('init', 'create_jobs_taxonomy', 0);
 
 
 /**
+ * Jobs filter function
+ */
+function ctdn_filter_function(){
+	$args = array(
+		'post_type' => 'jobs',
+	);
+ 
+	// for taxonomies / categories
+	if( isset( $_POST['category-filter']) && $_POST['category-filter'] != '' ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'Job-Kategorie',
+				'field' => 'id',
+				'terms' => $_POST['category-filter']
+			),
+			'relation' => 'AND',
+		);
+	}
+	
+	if( isset( $_POST['ou-filter'] ) && $_POST['ou-filter'] != ''){
+		$args['tax_query'][] = array(
+			array(
+				'taxonomy' => 'Arbeitsbereich',
+				'field' => 'id',
+				'terms' => $_POST['ou-filter']
+			)
+		);
+	}
+	
+	$query = new WP_Query( $args );
+ 
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post();
+    		include (get_template_directory()."/card-jobs.php");
+		endwhile;
+		wp_reset_postdata();
+	else :
+		echo 'Es wurden keine Jobs gefunden';
+	endif;
+ 
+	die();
+}
+ 
+ 
+add_action('wp_ajax_myfilter', 'ctdn_filter_function'); 
+add_action('wp_ajax_nopriv_myfilter', 'ctdn_filter_function');
+
+/**
  * Define meta boxes
  */
 add_filter( 'rwmb_meta_boxes', 'YOURPREFIX_register_meta_boxes' );

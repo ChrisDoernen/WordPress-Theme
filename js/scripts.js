@@ -44,8 +44,7 @@ jQuery(window).on("load", function()
 });
 
 // Calculate card posts meta width
-(function($)
-{
+(function($){
     var widthContainer = $('.card-posts__meta').width();
     var widthImg = $('.card-posts__avatar').outerWidth();
     var diff = widthContainer - widthImg - 20;
@@ -100,8 +99,27 @@ jQuery(window).on("load", function()
         }
     });
     
-$(function() {
-	FastClick.attach(document.body);
-});
+    $(function() {
+    	FastClick.attach(document.body);
+    });
+})(jQuery);
 
-})(jQuery);   
+
+(function($){
+	$('#filter').submit(function(){
+		var filter = $('#filter');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(), // form data
+			type:filter.attr('method'), // POST
+			beforeSend:function(xhr){
+				filter.find('button').text('aktualisiere...'); // changing the button label
+			},
+			success:function(data){
+				filter.find('button').text('aktualisieren'); // changing the button label back
+				$('#ajax-response').html(data); // insert data
+			}
+		});
+		return false;
+	});
+})(jQuery);
