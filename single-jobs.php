@@ -69,7 +69,7 @@
 					       	
 					       	<?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
 								<p>
-									<span class="job-meta-info">ungefährer Aufwand:</span><br>
+									<span class="job-meta-info">Ungefährer Zeitaufwand:</span><br>
 						            <span class="job-tag">
 						               <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?> h/Woche
 						            </span>
@@ -104,7 +104,7 @@
 					
     				<div class="row">
     				    <div class="col-xs-12">
-                            <?php echo do_shortcode('[shariff headline="<h6>Diesen Job jemandem empfehlen</h6>"]')?>
+                            <?php echo do_shortcode('[shariff services="whatsapp|mailto" headline="<h6>Diesen Job jemandem empfehlen</h6>"]')?>
                         </div>
     				</div>
 				</div>

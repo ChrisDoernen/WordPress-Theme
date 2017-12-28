@@ -11,9 +11,9 @@
 	<div class="site-container">
 	
 	<?php include (get_template_directory().'/navigation.php'); ?>
-	<?php include (get_template_directory().'/header-parent-page.php'); ?>
+	<?php include (get_template_directory().'/header-single-page.php'); ?>
 	
-	<section id="secGroups" class="section section--less-margin centered">
+	<section id="secGroups" class="section section--less-margin background-white centered diagonal-top">
 		<div class="container container-ms">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">

@@ -1346,6 +1346,7 @@ blockquote p {
 
 .job-filter {
     margin: 35px 0;
+    float: right;
 }
 
 .job {
@@ -1398,7 +1399,7 @@ blockquote p {
 }
 
 .job__meta-box {
-    background-color: #efefef;
+    background-color: #f5f5f5;
     border-radius: 2px;
     padding: 20px;
     font-size: 1rem;
