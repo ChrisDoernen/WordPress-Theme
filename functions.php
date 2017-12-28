@@ -846,5 +846,13 @@ function get_event_artwork($post, $field_name, $request) {
 }
 
  
-
+ 
+ /**
+ * Disable all other than p, h3, h4 in Editor
+ */ 
+function ctdn_disable_block_formats($arr){
+    $arr['block_formats'] = 'Paragraph=p;Heading 3=h3;Heading 4=h4;';
+    return $arr;
+  }
+add_filter('tiny_mce_before_init', 'ctdn_disable_block_formats');
  
