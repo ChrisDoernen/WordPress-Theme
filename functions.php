@@ -139,7 +139,7 @@ function create_posttype_jobs() {
 
             'has_archive' => false,
             'rewrite' => array(
-            	'slug' => 'jobs',
+            	'slug' => 'mitarbeiten',
             	'with_front'  => false,
             	),
             'supports' => array('title', 'editor', 'page-attributes',),
@@ -183,12 +183,16 @@ add_action('init', 'create_jobs_taxonomy', 0);
 /**
  * Jobs filter function
  */
-function ctdn_filter_function(){
+function ctdn_jobs_loop_and_filter(){
 	$args = array(
 		'post_type' => 'jobs',
+		'posts_per_page' => 4,
 	);
- 
-	// for taxonomies / categories
+	
+	if( ! empty( $_POST['post_offset'] ) ) {
+        $args['offset'] = $_POST['post_offset'];
+    }
+	
 	if( isset( $_POST['category-filter']) && $_POST['category-filter'] != '' ) {
 		$args['tax_query'] = array(
 			array(
@@ -210,23 +214,30 @@ function ctdn_filter_function(){
 		);
 	}
 	
+	$count_results = '0';
 	$query = new WP_Query( $args );
  
 	if( $query->have_posts() ) :
+		$count_results = $query_results->found_posts;
+		$results_html = '';
+        ob_start();
 		while( $query->have_posts() ): $query->the_post();
     		include (get_template_directory()."/card-jobs.php");
 		endwhile;
+		$results_html = ob_get_clean();
 		wp_reset_postdata();
-	else :
-		echo 'Es wurden keine Jobs gefunden';
 	endif;
- 
+	
+	$response = array();
+    array_push ( $response, $results_html, $count_results );
+    echo json_encode( $response, JSON_UNESCAPED_SLASHES );
+	
 	die();
 }
  
  
-add_action('wp_ajax_myfilter', 'ctdn_filter_function'); 
-add_action('wp_ajax_nopriv_myfilter', 'ctdn_filter_function');
+add_action('wp_ajax_jobfilter', 'ctdn_jobs_loop_and_filter'); 
+add_action('wp_ajax_nopriv_jobfilter', 'ctdn_jobs_loop_and_filter');
 
 /**
  * Define meta boxes

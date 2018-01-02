@@ -41,70 +41,72 @@
 								echo $content;
 							?>
 						</div>
-						<div class="col-xs-12 col-sm-4 job__meta-box">
-							<?php $terms = get_the_terms($post->ID, "Job-Kategorie");
-					            $count = count($terms);
-					            if ( $count > 0 ){?>
-					            	<p>
-									<span class="job-meta-info">Kategorie:</span><br>
-					                <?php foreach ( $terms as $term ) { ?>
-					                    <span class="job-tag"> 
-					                    <?php echo  $term->name; ?>
-					                   </span> 
-					            <?php } ?>
-					            	</p>
-					        <?php } ?>
-							<?php $terms = get_the_terms($post->ID, "Arbeitsbereich");
-					            $count = count($terms);
-						            if ( $count > 0 ){ ?>
-						            <p>
-									<span class="job-meta-info">Arbeitsbereich:</span><br>
-					                <?php foreach ( $terms as $term ) { ?>
-					                    <span class="job-tag"> 
-					                    <?php echo  $term->name; ?>
-					                   </span> 
-					            <?php } ?>
-					            </p>
-					       	<?php } ?>
-					       	
-					       	<?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
-								<p>
-									<span class="job-meta-info">Ungefährer Zeitaufwand:</span><br>
-						            <span class="job-tag">
-						               <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?> h/Woche
-						            </span>
-					            </p>
-					        <?php } ?>
-						
-							<?php if ( rwmb_meta ( 'ctdn_job_organizationalUnitLeader' ) != ''){?>
-								<p>
-									<span class="job-meta-info">Leiter/Kontaktperson:</span></br>
-									<?php if ( rwmb_meta( 'ctdn_job_ouLeaderImage' ) != "") {
-										echo "<img class='job__leaderImage' src=";
-	        								$args = array('size' => 'thumbnail','type' => 'image');
-	        								$images = rwmb_meta( 'ctdn_job_ouLeaderImage', $args );
-	    									if ( !empty( $images ) ) {
-	    										foreach ( $images as $image ) {
-	    										    echo $image['url'];
-	    										}
-	    									} 
-	    									echo ";'></img>";
-    									}
-    								?>
-						            <?php echo rwmb_meta ( 'ctdn_job_organizationalUnitLeader' );?>
-					            </p>
-					        <?php } ?>
+						<div class="col-xs-12 col-sm-4 job__meta-box-container">
+							<div class="job__meta-box">
+								<?php $terms = get_the_terms($post->ID, "Job-Kategorie");
+						            $count = count($terms);
+						            if ( $count > 0 ){?>
+						            	<p>
+										<span class="job-meta-info">Kategorie:</span><br>
+						                <?php foreach ( $terms as $term ) { ?>
+						                    <span class="job-tag"> 
+						                    <?php echo  $term->name; ?>
+						                   </span> 
+						            <?php } ?>
+						            	</p>
+						        <?php } ?>
+								<?php $terms = get_the_terms($post->ID, "Arbeitsbereich");
+						            $count = count($terms);
+							            if ( $count > 0 ){ ?>
+							            <p>
+										<span class="job-meta-info">Arbeitsbereich:</span><br>
+						                <?php foreach ( $terms as $term ) { ?>
+						                    <span class="job-tag"> 
+						                    <?php echo  $term->name; ?>
+						                   </span> 
+						            <?php } ?>
+						            </p>
+						       	<?php } ?>
+						       	
+						       	<?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
+									<p>
+										<span class="job-meta-info">Ungefährer Zeitaufwand:</span><br>
+							            <span class="job-tag">
+							               <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?> h/Woche
+							            </span>
+						            </p>
+						        <?php } ?>
 							
-							
-							<p><span class="job-meta-info">Zuletzt aktualisiert:</span><br>
-								<?php echo get_the_date();?>
-							</p>
+								<?php if ( rwmb_meta ( 'ctdn_job_organizationalUnitLeader' ) != ''){?>
+									<p>
+										<span class="job-meta-info">Leiter/Kontaktperson:</span></br>
+										<?php if ( rwmb_meta( 'ctdn_job_ouLeaderImage' ) != "") {
+											echo "<img class='job__leaderImage' src=";
+		        								$args = array('size' => 'thumbnail','type' => 'image');
+		        								$images = rwmb_meta( 'ctdn_job_ouLeaderImage', $args );
+		    									if ( !empty( $images ) ) {
+		    										foreach ( $images as $image ) {
+		    										    echo $image['url'];
+		    										}
+		    									} 
+		    									echo ";'></img>";
+	    									}
+	    								?>
+							            <?php echo rwmb_meta ( 'ctdn_job_organizationalUnitLeader' );?>
+						            </p>
+						        <?php } ?>
+								
+								
+								<p><span class="job-meta-info">Zuletzt aktualisiert:</span><br>
+									<?php echo the_modified_date();?>
+								</p>
+							</div>
 						</div>
 					</div>
 					
     				<div class="row">
     				    <div class="col-xs-12">
-                            <?php echo do_shortcode('[shariff services="whatsapp|mailto" headline="<h6>Diesen Job jemandem empfehlen</h6>"]')?>
+                            <?php echo do_shortcode('[shariff services="whatsapp|mailto" headline="<h6>Diese Aufgabe jemandem empfehlen</h6>"]')?>
                         </div>
     				</div>
 				</div>
@@ -119,7 +121,7 @@
 					
 					<div class="row">
 						<div class="col-xs-12">
-							<a href="<?php echo home_url();?>/jobs" class="btn btn-default" role="button">zur Jobseite</a>
+							<a href="<?php echo home_url();?>/mitarbeiten" class="btn btn-default" role="button">zur Übersichtsseite</a>
 						</div>
 					</div>
 				</div>

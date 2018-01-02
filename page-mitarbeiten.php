@@ -66,33 +66,23 @@
 										?>
 									</select >
 									<button>aktualisieren</button>
-									<input type="hidden" name="action" value="myfilter">
+									<input type="hidden" name="action" value="jobfilter">
 								</form>
 							</div>
 						</div>
 					</div>
 					
-					<div id="ajax-response" class="row">
-						<?php
-    						$argu = array(
-    							'post_type' => 'jobs',
-    						);
-    						
-    						$the_query = new WP_Query($argu);
-    						if ($the_query->have_posts()) 
-    						{
-    							while ($the_query->have_posts()) 
-    							{
-    								$the_query->the_post();
-    								include (get_template_directory()."/card-jobs.php");
-    							} 
-    						    wp_reset_postdata();
-    						} 
-    						else 
-    						{
-    							echo "Momentan gibt es keine Jobs."; // no posts found
-    						}
-    					?>
+					<div id="jobs-container" class="row">
+					
+    					
+					</div>
+					
+					<div class="row">
+						<?php if( $loop->max_num_pages > 1 ) {?>
+							<div class="col-xs-12 centered">
+							    <a id="load-more" href="" class="btn btn-default" role="button">mehr laden</a>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

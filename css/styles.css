@@ -229,6 +229,12 @@ background-color: #ececec;
     text-decoration: underline;
 }
 
+.event__infos p a:hover,
+.event__infos p a:focus{
+    color: #0085a0;
+    text-decoration: underline;
+}
+
 .event__date,
 .card-events__date {
     color: white;
@@ -1398,6 +1404,10 @@ blockquote p {
     margin-top: 10px;
 }
 
+.job__meta-box-container {
+    padding: 10px;
+}
+
 .job__meta-box {
     background-color: #f5f5f5;
     border-radius: 2px;
@@ -1415,7 +1425,8 @@ blockquote p {
 }
 
 .job__title {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 10px;
 }
 
 .job__content {

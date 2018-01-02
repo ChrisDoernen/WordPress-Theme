@@ -106,20 +106,91 @@ jQuery(window).on("load", function()
 
 
 (function($){
-	$('#filter').submit(function(){
-		var filter = $('#filter');
-		$.ajax({
-			url:filter.attr('action'),
-			data:filter.serialize(), // form data
-			type:filter.attr('method'), // POST
-			beforeSend:function(xhr){
-				filter.find('button').text('aktualisiere...'); // changing the button label
-			},
-			success:function(data){
-				filter.find('button').text('aktualisieren'); // changing the button label back
-				$('#ajax-response').html(data); // insert data
-			}
-		});
-		return false;
-	});
+	$('#filter').submit(function(){jobs_query(false, 4)});
 })(jQuery);
+
+
+(function($){
+    $( '#load-more' ).click( function( e ) {
+        e.preventDefault();
+        jobs_query(true, 4)
+    });
+})(jQuery);
+
+
+function jobs_query(isLoadQuery, postOffset){
+	var filter = jQuery('#filter');
+	var ajaxData = filter.serialize(); // form data
+	
+	if(isLoadQuery) {
+	    //ajaxData += '&post_offset=' + postOffset;
+	}
+	else {
+	    //jQuery('#jobs-container').html('');
+	}
+	
+	jQuery.ajax({
+		url: filter.attr('action'),
+		data: ajaxData, 
+		type: filter.attr('method'),
+		dataType: 'json',
+		
+		beforeSend:function(xhr){
+		},
+		success:function(data){
+			jQuery('#jobs-container').append(data[0]); // insert data
+		}
+	});
+	return false;
+}
+
+
+
+function ajax_next_posts() {
+
+    //How many posts there's total
+    //var totalPosts = parseInt( jQuery( '#total-posts-count' ).text() );
+    //How many have been loaded
+    //var postOffset = jQuery( '.single-post' ).length;
+    //How many do you want to load in single patch
+    //var postsPerPage = 24;
+
+    var postOffset = 4;
+
+    //Hide button if all posts are loaded
+    //if( totalPosts < postOffset + ( 1 * postsPerPage ) ) {
+
+      //  jQuery( '#more-posts-button' ).fadeOut();
+    //}
+
+    //Change that to your right site url unless you've already set global ajaxURL
+    var ajaxURL = 'https://arche-web-chrisdoernen.c9users.io/wp-admin/admin-ajax.php';
+
+    //Parameters you want to pass to query
+    var ajaxData = '&post_offset=' + postOffset + '&action=jobfilter';
+
+    //Ajax call itself
+    jQuery.ajax({
+
+        type: 'POST',
+        url:  ajaxURL,
+        data: ajaxData,
+        dataType: 'json',
+
+        //Ajax call is successful
+        success: function ( response ) {
+
+            //Add new posts
+            jQuery( '#jobs-container' ).append( response[0] );
+            //Update the count of total posts
+            //jQuery( '#total-posts-count' ).text( response[1] );
+
+        },
+
+        //Ajax call is not successful, still remove lock in order to try again
+        error: function () {
+
+        }
+    });
+}
+
