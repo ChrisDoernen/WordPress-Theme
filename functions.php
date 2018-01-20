@@ -217,7 +217,7 @@ function ctdn_jobs_loop_and_filter(){
 	$count_results = '0';
 	$query = new WP_Query( $args );
  
-	if( $query->have_posts() ) :
+	if( $query->have_posts() ) {
 		$count_results = $query_results->found_posts;
 		$results_html = '';
         ob_start();
@@ -226,11 +226,14 @@ function ctdn_jobs_loop_and_filter(){
 		endwhile;
 		$results_html = ob_get_clean();
 		wp_reset_postdata();
-	endif;
+	}
+	else {
+		$results_html = "Es wurden keine Einträge gefunden.";
+	}
 	
 	$response = array();
     array_push ( $response, $results_html, $count_results );
-    echo json_encode( $response, JSON_UNESCAPED_SLASHES );
+    echo json_encode( $response );
 	
 	die();
 }

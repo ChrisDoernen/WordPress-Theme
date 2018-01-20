@@ -106,42 +106,55 @@ jQuery(window).on("load", function()
 
 
 (function($){
-	$('#filter').submit(function(){jobs_query(false, 4)});
-})(jQuery);
+	$('#filter').submit(function(){
+	    jobs_query(false, 4);
+	});
 
-
-(function($){
-    $( '#load-more' ).click( function( e ) {
-        e.preventDefault();
-        jobs_query(true, 4)
+    $( '#load-more' ).click( function() {
+        event.preventDefault();
+        jobs_query(false, 4);
+        return false;
     });
+    
+    $( document ).ready(function() {
+        jobs_query(false, 4);
+    });
+    
+    $( document ).ajaxError(function( event, jqxhr, settings, exception ) {  
+        alert( "Triggered ajaxError handler." );  
+    }); 
 })(jQuery);
 
 
-function jobs_query(isLoadQuery, postOffset){
+function jobs_query(isLoadMoreCall, postOffset){
 	var filter = jQuery('#filter');
 	var ajaxData = filter.serialize(); // form data
 	
-	if(isLoadQuery) {
+	if(isLoadMoreCall) {
 	    //ajaxData += '&post_offset=' + postOffset;
 	}
 	else {
-	    //jQuery('#jobs-container').html('');
+	    jQuery('#jobs-container').html('');
 	}
 	
+	var ajaxUrl = filter.attr('action');
+	var ajaxType = filter.attr('method');
+	
 	jQuery.ajax({
-		url: filter.attr('action'),
+		url: ajaxUrl,
 		data: ajaxData, 
-		type: filter.attr('method'),
+		type: ajaxType,
 		dataType: 'json',
 		
 		beforeSend:function(xhr){
 		},
 		success:function(data){
 			jQuery('#jobs-container').append(data[0]); // insert data
-		}
+		},
+		error: function () {
+		    alert("error");
+        }
 	});
-	return false;
 }
 
 
