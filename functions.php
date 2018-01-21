@@ -186,8 +186,11 @@ add_action('init', 'create_jobs_taxonomy', 0);
 function ctdn_jobs_loop_and_filter(){
 	$args = array(
 		'post_type' => 'jobs',
-		'posts_per_page' => 4,
 	);
+	
+	if( ! empty( $_POST['post_per_page'] ) &&  $_POST['post_per_page'] != '') {
+        $args['posts_per_page'] = $_POST['post_per_page'];
+    }
 	
 	if( ! empty( $_POST['post_offset'] ) ) {
         $args['offset'] = $_POST['post_offset'];
@@ -217,13 +220,16 @@ function ctdn_jobs_loop_and_filter(){
 	$count_results = '0';
 	$query = new WP_Query( $args );
  
-	if( $query->have_posts() ) {
-		$count_results = $query_results->found_posts;
+	if( $query->have_posts() ) 
+	{
+		$count_results = $query->post_count;
 		$results_html = '';
         ob_start();
-		while( $query->have_posts() ): $query->the_post();
+		while( $query->have_posts() )
+		{ 
+			$query->the_post();
     		include (get_template_directory()."/card-jobs.php");
-		endwhile;
+		}
 		$results_html = ob_get_clean();
 		wp_reset_postdata();
 	}

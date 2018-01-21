@@ -3,7 +3,7 @@
 
 <head>
 
-<?php include (get_template_directory().'/head.php'); ?>
+	<?php include (get_template_directory().'/head.php'); ?>
 
 </head>
 
@@ -38,7 +38,7 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<div class='job-filter'>
-								<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+								<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" default-loaded-posts="4" actual-loaded-posts="0" method="POST" id="filter">
 									<select name="category-filter">
 										<option>alle Kategorien</option>
 										<?php
@@ -92,4 +92,6 @@
 	<?php include (get_template_directory().'/footer.php'); ?> 
 
     </div>
+    
+    <script type="text/javascript" src="<?php echo (get_template_directory_uri().'/js/scripts-jobs.js');?>"></script>
 </body>
