@@ -223,6 +223,7 @@ function ctdn_jobs_loop_and_filter(){
 	if( $query->have_posts() ) 
 	{
 		$count_results = $query->post_count;
+		$count_total = $query->found_posts;
 		$results_html = '';
         ob_start();
 		while( $query->have_posts() )
@@ -238,7 +239,7 @@ function ctdn_jobs_loop_and_filter(){
 	}
 	
 	$response = array();
-    array_push ( $response, $results_html, $count_results );
+    array_push ( $response, $results_html, $count_results, $count_total );
     echo json_encode( $response );
 	
 	die();

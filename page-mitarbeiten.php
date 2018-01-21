@@ -79,8 +79,8 @@
 					
 					<div class="row">
 						<?php if( true ) {?>
-							<div class="col-xs-12 centered">
-							    <a id="load-more" href="" class="btn btn-default" role="button">mehr laden</a>
+							<div class="col-xs-12 centered ">
+							    <a id="load-more" href="" class="btn btn-default hidden" role="button">mehr laden</a>
 							</div>
 						<?php } ?>
 					</div>
