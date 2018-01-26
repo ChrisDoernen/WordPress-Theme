@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div class="siteContainer">
+	<div class="site-container">
     
     <?php include (get_template_directory().'/navigation.php'); ?>
     <?php include (get_template_directory().'/header-events.php'); ?>   
