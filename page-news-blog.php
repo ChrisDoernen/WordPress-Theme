@@ -13,7 +13,7 @@
 	<?php include (get_template_directory().'/navigation.php'); ?>
 	<?php include (get_template_directory().'/header-parent-page.php'); ?>
 
-    <section id="intro" class="sectionLessMargin background-grey ">
+    <section id="intro" class="section--less-margin background-grey ">
 		<div class="container container-ms">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 ">
