@@ -30,8 +30,8 @@
         } ?>
         
         <?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
-            <span class="job-tag">
-                ca. <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?> h/Woche
+            <span class="job-tag ">
+                <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?>h
             </span>
         <?php } ?>
         

@@ -39,34 +39,43 @@
 						<div class="col-xs-12">
 							<div class='job-filter'>
 								<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" default-loaded-posts="4" actual-loaded-posts="0" method="POST" id="filter">
-									<select name="category-filter">
-										<option>alle Kategorien</option>
-										<?php
-											$terms = get_terms( array(
-											    'taxonomy' => 'Job-Kategorie',
-											    'hide_empty' => true,
-											) );
-											
-											foreach ($terms as $term) {
-												echo "<option value=".$term->term_id.">".$term->name."</option>";
-											}
-										?>
-									</select>
-									<select name="ou-filter">
-										<option>alle Bereiche</option>
-										<?php
-											$terms = get_terms( array(
-											    'taxonomy' => 'Arbeitsbereich',
-											    'hide_empty' => true,
-											) );
-											
-											foreach ($terms as $term) {
-												echo "<option value=".$term->term_id.">".$term->name."</option>";
-											}
-										?>
-									</select >
-									<button>aktualisieren</button>
-									<input type="hidden" name="action" value="jobfilter">
+									
+									<div class="col-sm-4 job-option">
+										Kategorie
+										<select class="form-control" name="category-filter">
+											<option>alle Kategorien</option>
+											<?php
+												$terms = get_terms( array(
+												    'taxonomy' => 'Job-Kategorie',
+												    'hide_empty' => true,
+												) );
+												
+												foreach ($terms as $term) {
+													echo "<option value=".$term->term_id.">".$term->name."</option>";
+												}
+											?>
+										</select>
+									</div>
+									<div class="col-sm-4 job-option">
+										Arbeitsbereich
+										<select class="form-control" name="ou-filter">
+											<option>alle Bereiche</option>
+											<?php
+												$terms = get_terms( array(
+												    'taxonomy' => 'Arbeitsbereich',
+												    'hide_empty' => true,
+												) );
+												
+												foreach ($terms as $term) {
+													echo "<option value=".$term->term_id.">".$term->name."</option>";
+												}
+											?>
+										</select >
+									</div>
+									<div class="col-sm-4 job-option job-option__button">
+										<button class="btn btn-default">filtern</button>
+										<input type="hidden" name="action" value="jobfilter">
+									</div>
 								</form>
 							</div>
 						</div>
@@ -76,7 +85,9 @@
 					
     					
 					</div>
-					
+					<div class="row jobs-display-count">
+						zeige <span class="jobs-display-count__currently-loaded">x</span> von  <span class="jobs-display-count__total">y</span> Einträgen
+					</div>
 					<div class="row">
 						<?php if( true ) {?>
 							<div class="col-xs-12 centered ">

@@ -12,7 +12,7 @@
     });
     
     $( document ).ready(function() {
-        //jobs_query(false);
+        jobs_query(false);
     });
     
     $( document ).ajaxError(function( event, jqxhr, settings, exception ) {  
@@ -20,6 +20,8 @@
     }); 
 
     function jobs_query(isLoadMoreCall){
+        $('.jobs-display-count').addClass('hidden')
+        $('#load-more').addClass('hidden')
     	var filter = $('#filter');
     	var ajaxData = filter.serialize(); // form data
     	var postsLoaded = filter.attr('actual-loaded-posts');
@@ -57,15 +59,14 @@
     			if (postsLoadedNew < data[2]){
     			    $('#load-more').removeClass('hidden')
     			}
-    			else {
-    			    $('#load-more').addClass('hidden')
-    			}
+    			$('.jobs-display-count__currently-loaded').html(postsLoadedNew);
+    			$('.jobs-display-count__total').html(data[2]);
     		},
     		error: function (data) {
     		    alert("error");
             },
             complete: function() {
-                
+                $('.jobs-display-count').removeClass('hidden');
             }
     	});
     }

@@ -20,9 +20,7 @@
 	                <div class="row">
                 		<div class="col-xs-12">
 							<div class="job__date ">
-								<span class="meta-info">
-								    <?php echo get_the_date();?> 
-								</span>
+								Jobinfo / <?php echo get_the_date();?>
 							</div>
 						</div>
 	                </div>
@@ -34,22 +32,34 @@
 						</div>
 	                </div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-8 job__content">
-							<?php
-								$post = get_post($siteId);
-								$content = apply_filters('the_content', $post->post_content);
-								echo $content;
-							?>
-						</div>
+						<div class="col-xs-12 col-sm-8 ">
+							<div class="row">
+								<div class="col-xs-12 job__content">
+									<?php
+										$post = get_post($siteId);
+										$content = apply_filters('the_content', $post->post_content);
+										echo $content;
+									?>
+								</div>
+							</div>
+							<div class="row">
+		    				    <div class="col-xs-12">
+		                            <?php echo do_shortcode('[shariff services="whatsapp|mailto" headline="<h6>Diese Aufgabe jemandem empfehlen</h6>"]')?>
+		                        </div>
+		    				</div>
+		    			</div>
 						<div class="col-xs-12 col-sm-4 job__meta-box-container">
 							<div class="job__meta-box">
+								<div class="job-info-icon ">
+									<i class="fa fa-5x fa-info-circle"></i>
+								</div>
 								<?php $terms = get_the_terms($post->ID, "Job-Kategorie");
 						            $count = count($terms);
 						            if ( $count > 0 ){?>
 						            	<p>
 										<span class="job-meta-info">Kategorie:</span><br>
 						                <?php foreach ( $terms as $term ) { ?>
-						                    <span class="job-tag"> 
+						                    <span class=""> 
 						                    <?php echo  $term->name; ?>
 						                   </span> 
 						            <?php } ?>
@@ -61,7 +71,7 @@
 							            <p>
 										<span class="job-meta-info">Arbeitsbereich:</span><br>
 						                <?php foreach ( $terms as $term ) { ?>
-						                    <span class="job-tag"> 
+						                    <span class=""> 
 						                    <?php echo  $term->name; ?>
 						                   </span> 
 						            <?php } ?>
@@ -70,9 +80,9 @@
 						       	
 						       	<?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
 									<p>
-										<span class="job-meta-info">Ungefährer Zeitaufwand:</span><br>
-							            <span class="job-tag">
-							               <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?> h/Woche
+										<span class="job-meta-info">Zeitaufwand/Woche:</span><br>
+							            <span class="">
+							               <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?>h
 							            </span>
 						            </p>
 						        <?php } ?>
@@ -104,11 +114,7 @@
 						</div>
 					</div>
 					
-    				<div class="row">
-    				    <div class="col-xs-12">
-                            <?php echo do_shortcode('[shariff services="whatsapp|mailto" headline="<h6>Diese Aufgabe jemandem empfehlen</h6>"]')?>
-                        </div>
-    				</div>
+    				
 				</div>
 			</div>
 		</div>
