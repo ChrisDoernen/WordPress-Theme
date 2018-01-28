@@ -236,6 +236,7 @@ function ctdn_jobs_loop_and_filter(){
 	}
 	else {
 		$results_html = "Es wurden keine Einträge gefunden.";
+		$count_total = 0;
 	}
 	
 	$response = array();

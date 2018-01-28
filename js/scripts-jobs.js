@@ -61,12 +61,14 @@
     			}
     			$('.jobs-display-count__currently-loaded').html(postsLoadedNew);
     			$('.jobs-display-count__total').html(data[2]);
+    			if (data[2] > 0) {
+                    $('.jobs-display-count').removeClass('hidden');
+                }
     		},
     		error: function (data) {
     		    alert("error");
             },
-            complete: function() {
-                $('.jobs-display-count').removeClass('hidden');
+            complete: function(data) {
             }
     	});
     }
