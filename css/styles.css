@@ -229,6 +229,11 @@ background-color: #ececec;
     text-decoration: underline;
 }
 
+.event__infos p a:hover {
+    color: #0085A1;
+    text-decoration: underline;
+}
+
 .event__date,
 .card-events__date {
     color: white;
