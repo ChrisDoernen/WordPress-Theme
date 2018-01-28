@@ -96,15 +96,15 @@ strong {
     margin-top: 17px;
     border-radius: 22px;
     background-color: transparent;
-    border-color: #0085A1;
-    color: #0085A1;
+    border-color: #56838a;
+    color: #56838a;
     letter-spacing: 2px;
 }
 
 .btn-default:hover {
     color: #fff;
-    background-color: #0085A1;
-    border-color: #0085A1;
+    background-color: #56838a;
+    border-color: #56838a;
 }
 
 img.alignright { 

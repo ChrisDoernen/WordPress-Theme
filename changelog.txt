@@ -4,6 +4,7 @@ Changelog:
 - Add functionality to publish jobs
 - Changed permalink structure for posts and events
 - Bugfix sermon-link
+- Minor style changes (body background, primary button color)
 
 1.4
 - Extend the WP-API for retrieving event metadata
