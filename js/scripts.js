@@ -44,8 +44,7 @@ jQuery(window).on("load", function()
 });
 
 // Calculate card posts meta width
-(function($)
-{
+(function($){
     var widthContainer = $('.card-posts__meta').width();
     var widthImg = $('.card-posts__avatar').outerWidth();
     var diff = widthContainer - widthImg - 20;
@@ -100,8 +99,7 @@ jQuery(window).on("load", function()
         }
     });
     
-$(function() {
-	FastClick.attach(document.body);
-});
-
-})(jQuery);   
+    $(function() {
+    	FastClick.attach(document.body);
+    });
+})(jQuery);

@@ -124,7 +124,7 @@
 		<div class="container container-ms">	
 			<div class="row">
 				<div class="col-xs-12 centered">
-				    <a href="<?php echo esc_url( home_url( '/' ) ).'events-termine/kalender'; ?>" target="_blank" class="btn btn-default" role="button">zum Online-Kalender</a>
+				    <a href="<?php echo esc_url( home_url( '/' ) ).'kalender'; ?>" target="_blank" class="btn btn-default" role="button">zum Online-Kalender</a>
 				</div>
 			</div>	
 		</div>

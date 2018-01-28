@@ -74,7 +74,7 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 /**
  * Create custom type for events
  */
-function create_posttype() {
+function create_posttype_events() {
     register_post_type( 'events',
         array(
             'labels' => array(
@@ -101,8 +101,11 @@ function create_posttype() {
         )
     );
 }
-add_action( 'init', 'create_posttype', 0 );
+add_action( 'init', 'create_posttype_events', 0 );
 
+/**
+ * Create taxonomy for events
+ */
 function create_event_taxonomy() {
     register_taxonomy(
         'Anzeigeeinstellungen',
@@ -114,9 +117,7 @@ function create_event_taxonomy() {
         )
     );
 }
-<<<<<<< Updated upstream
-add_action('init', 'create_event_taxonomy');
-=======
+
 add_action('init', 'create_event_taxonomy', 0);
 
 /**
@@ -135,9 +136,10 @@ function create_posttype_jobs() {
             'show_in_menu'        => true,
             'show_in_nav_menus'   => true,
             'show_in_admin_bar'   => true,
+
             'has_archive' => false,
             'rewrite' => array(
-            	'slug' => 'jobs',
+            	'slug' => 'mitarbeiten',
             	'with_front'  => false,
             	),
             'supports' => array('title', 'editor', 'page-attributes',),
@@ -176,9 +178,76 @@ function create_jobs_taxonomy() {
     );
 }
 add_action('init', 'create_jobs_taxonomy', 0);
->>>>>>> Stashed changes
 
 
+/**
+ * Jobs filter function
+ */
+function ctdn_jobs_loop_and_filter(){
+	$args = array(
+		'post_type' => 'jobs',
+	);
+	
+	if( ! empty( $_POST['post_per_page'] ) &&  $_POST['post_per_page'] != '') {
+        $args['posts_per_page'] = $_POST['post_per_page'];
+    }
+	
+	if( ! empty( $_POST['post_offset'] ) ) {
+        $args['offset'] = $_POST['post_offset'];
+    }
+	
+	if( isset( $_POST['category-filter']) && $_POST['category-filter'] != '' ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'Job-Kategorie',
+				'field' => 'id',
+				'terms' => $_POST['category-filter']
+			),
+			'relation' => 'AND',
+		);
+	}
+	
+	if( isset( $_POST['ou-filter'] ) && $_POST['ou-filter'] != ''){
+		$args['tax_query'][] = array(
+			array(
+				'taxonomy' => 'Arbeitsbereich',
+				'field' => 'id',
+				'terms' => $_POST['ou-filter']
+			)
+		);
+	}
+	
+	$count_results = '0';
+	$query = new WP_Query( $args );
+ 
+	if( $query->have_posts() ) 
+	{
+		$count_results = $query->post_count;
+		$count_total = $query->found_posts;
+		$results_html = '';
+        ob_start();
+		while( $query->have_posts() )
+		{ 
+			$query->the_post();
+    		include (get_template_directory()."/card-jobs.php");
+		}
+		$results_html = ob_get_clean();
+		wp_reset_postdata();
+	}
+	else {
+		$results_html = "Es wurden keine Einträge gefunden.";
+	}
+	
+	$response = array();
+    array_push ( $response, $results_html, $count_results, $count_total );
+    echo json_encode( $response );
+	
+	die();
+}
+ 
+ 
+add_action('wp_ajax_jobfilter', 'ctdn_jobs_loop_and_filter'); 
+add_action('wp_ajax_nopriv_jobfilter', 'ctdn_jobs_loop_and_filter');
 
 /**
  * Define meta boxes
@@ -597,6 +666,48 @@ $meta_boxes[] = array(
 			),
 		),
 	);
+	
+// Meta Boxes auf Jobs	
+	
+	$meta_boxes[] = array(
+		'title'    => 'Kurzbeschreibung',
+        'post_types' => array( 'jobs' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+        	array(
+			'name'  => 'Knappe Beschreibung des Jobs für die Übersicht.',
+			'id'    => 'ctdn_job_desc',
+			'type' => 'textarea',
+			),
+		),
+	);
+	
+	$meta_boxes[] = array(
+		'title'    => 'Angaben zum Job',
+        'post_types' => array( 'jobs' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+        	array (
+				'name'        => 'Geschätzte Stunden Pro Woche',
+			    'id'          => 'ctdn_job_estimatedTime',
+			    'type'        => 'text',
+		    ),
+		    array (
+				'name'        => 'Leiter',
+			    'id'          => 'ctdn_job_organizationalUnitLeader',
+			    'type'        => 'text',
+		    ),
+			array (
+				'name'  => 'Bild des Leiters',
+				'id'    => 'ctdn_job_ouLeaderImage',
+				'type'  => 'image_advanced',
+				'max_file_uploads' => '1',
+				'force_delete' => false,
+			),
+		),
+	);
 
 	foreach ( $meta_boxes as $k => $meta_box ) {
 		if ( isset( $meta_box['only_on'] ) && ! rw_maybe_include( $meta_box['only_on'] ) ) {
@@ -756,5 +867,13 @@ function get_event_artwork($post, $field_name, $request) {
 }
 
  
-
+ 
+ /**
+ * Disable all other than p, h3, h4 in Editor
+ */ 
+function ctdn_disable_block_formats($arr){
+    $arr['block_formats'] = 'Paragraph=p;Heading 3=h3;Heading 4=h4;';
+    return $arr;
+  }
+add_filter('tiny_mce_before_init', 'ctdn_disable_block_formats');
  

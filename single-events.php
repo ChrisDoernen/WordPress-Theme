@@ -12,7 +12,7 @@
     <?php include (get_template_directory().'/header-events.php'); ?>   
     
     <section id="content" class="section event background-white diagonal-bottom">
-		<div class="container">
+		<div class="container container-ms">
 			<div class="row">
                 <div class=" col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                     <div class="row">

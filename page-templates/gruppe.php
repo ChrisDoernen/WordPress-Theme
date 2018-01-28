@@ -16,7 +16,7 @@
     <?php include (get_template_directory().'/header-sub-page.php'); ?>
     
     <section class="content section section--less-margin background-white diagonal-top diagonal-bottom">
-		<div class="container">
+		<div class="container container-ms">
 			<div class="row">
                 <div class=" col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                 	<div class="row">
@@ -136,6 +136,7 @@
 							$anz = 0;
 							
 							$related_pages = rwmb_meta ('ctdn_related_pages');
+							$post_in = array();
 							
 							if (!empty ($related_pages)) 
 							{
@@ -148,7 +149,6 @@
 								
 								$ppp = $numberContentCards - $anz;
 								
-								$post_in = array();
 								
 								foreach ($related_pages as $key => $path) 
 								{
@@ -182,13 +182,15 @@
 		
 			    			//$post_in[$anz] = $siteId;
 			    			
+			    			$post_in[] = $siteId;
+			    			
 		    				if ($ppp > 0)
 		    				{
     							$argu = array (
     								'post_type' => 'page',
     								'post_parent' => $parentId,
     								'posts_per_page' => $ppp,
-    								'post__not_in' => $post_in,
+									'post__not_in' => $post_in,
     								'orderby' => 'menu_order',
     								'order' => 'ASC',
     							);

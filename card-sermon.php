@@ -16,7 +16,7 @@
             <?php echo $sermon['title']; ?>
         </span>
         <div class="card__sermon-interact pull-right">
-            <a href="http://podcast.arche-augsburg.de/<?php echo $sermon['fileName']; ?>">download</a>
+           <a href="http://podcast.arche-augsburg.de/<?php echo date_format($sermon['date'], 'Y')."/".$sermon['fileName']; ?>" target="_blank">download</a>
         </div>
     </div>
 </div>
