@@ -3,6 +3,7 @@ Changelog:
 1.5
 - Add functionality to publish jobs
 - Changed permalink structure for posts and events
+- Bugfix sermon-link
 
 1.4
 - Extend the WP-API for retrieving event metadata
@@ -21,4 +22,4 @@ Changelog:
 - Add thumbnail image
 
 1.0
-- Yay, a new theme is born
+- Hello world
