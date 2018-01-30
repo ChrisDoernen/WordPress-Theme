@@ -4,9 +4,10 @@ Changelog:
 
 1.5.0
 - Add functionality to publish jobs
+- Add checkbox to show only event date
 - Changed permalink structure for posts and events
 - Bugfix sermon-link
-- Minor style changes (body background, primary button color)
+- Minor style changes (primary button color)
 
 1.4.0
 - Extend the WP-API for retrieving event metadata
