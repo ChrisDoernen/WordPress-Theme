@@ -642,6 +642,7 @@ $meta_boxes[] = array(
 					'dateFormat' => 'yymmdd',
 					'timeFormat' => 'HH:mm',
 					'regional' => 'de',
+					'defaultValue' => '00:00',
 				),
 			),
             array(
@@ -658,7 +659,14 @@ $meta_boxes[] = array(
 					'dateFormat' => 'yymmdd',
 					'timeFormat' => 'HH:mm',
 					'regional' => 'de',
+					'defaultValue' => '00:00',
 				),
+			),
+			array(
+			    'name' => 'Zeige nur das Datum',
+			    'id'   => 'ctdn_event_show_date_only',
+			    'type' => 'checkbox',
+			    'std'  => 0, // 0 or 1
 			),
 			array(
 				'name'       => 'Location',

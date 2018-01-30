@@ -38,6 +38,7 @@
 							<div class="event__infos">
     						    <?php
 									$date = date_create();
+									$showDateOnly = (rwmb_meta('ctdn_event_show_date_only')); 
 									$start = (rwmb_meta('ctdn_event_start_datetime') !== '') 
 										? date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_start_datetime'))
 										: false;
@@ -54,18 +55,33 @@
 									// Start and end are the same or no end provided
 									elseif (empty($end) || $start === $end) 
 									{
-									    $datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp());
+										if ($showDateOnly == 0){
+									    	$datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp());
+										}
+										else {
+											$datetime = strftime('%a, %d. %b', $start->getTimestamp());
+										}
 									    $end = $start; // isOver flag relies on end so we need it
 									}
 									// Start and end date are the same, time is different
 									elseif ($start->format('Ymd') == $end->format('Ymd')) 
 									{
-									    $datetime = strftime('%a, %d. %b, %H:%M', $start->getTimestamp()).' - '.strftime('%H:%M Uhr', $end->getTimestamp());
+										if ($showDateOnly == 0){
+									    	$datetime = strftime('%a, %d. %b, %H:%M', $start->getTimestamp()).' - '.strftime('%H:%M Uhr', $end->getTimestamp());
+										}
+										else {
+											$datetime = strftime('%a, %d. %b', $start->getTimestamp());
+										}
 									}
 									// Start and end have different dates
 									else 
 									{
-									    $datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp()).' - '.strftime('%a, %d. %b, %H:%M Uhr', $end->getTimestamp());
+										if ($showDateOnly == 0){
+									    	$datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp()).' - '.strftime('%a, %d. %b, %H:%M Uhr', $end->getTimestamp());
+										}
+										else {
+											$datetime = strftime('%a, %d. %b', $start->getTimestamp()).' - '.strftime('%a, %d. %b', $end->getTimestamp());
+										}
 									}
 								?>
                                 <?php if($end->getTimestamp() < time()){ $isOver = true;?>
