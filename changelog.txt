@@ -1,26 +1,28 @@
 Changelog:
 
-1.5
+
+
+1.5.0
 - Add functionality to publish jobs
 - Changed permalink structure for posts and events
 - Bugfix sermon-link
 - Minor style changes (body background, primary button color)
 
-1.4
+1.4.0
 - Extend the WP-API for retrieving event metadata
 - Improve styles (Event links, font sizes, blockquotes)
 
-1.3
+1.3.0
 - Change sermon directory structure
 - Add possibility to like posts
 - Newsletter signup with first name
 
-1.2
+1.2.0
 - Posts bio from user settings, use custom avatar images
 - Fixes (locale settings, calendar menu)
 
-1.1
+1.1.0
 - Add thumbnail image
 
-1.0
+1.0.0
 - Hello world

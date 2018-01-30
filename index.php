@@ -81,8 +81,8 @@
 								<?php 
 									$argu = array(
         							    'post_type' => 'events',
-        							    'meta_key'=> 'ctdn_event_start_datetime',
-                                        'meta_value' => strftime('%Y%m%d, 00:00', time()),
+        							    'meta_key'=> 'ctdn_event_end_datetime',
+                                        'meta_value' => strftime('%Y%m%d, 00:01', time()),
                                         'meta_compare' => '>',
                                         'orderby' => 'menu_order',
                                         'order' => 'DESC',
