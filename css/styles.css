@@ -513,6 +513,14 @@ background-color: #ececec;
     background-position: 80% center;
 }
 
+.patnerLink {
+    color: inherit;
+}
+
+.patnerLink:hover {
+    color: #0085A1;
+}
+
 @media (max-width: 767px) and (min-width: 425px) {
     .container-ms {
         max-width: 500px!important;
