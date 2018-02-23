@@ -668,13 +668,22 @@ $meta_boxes[] = array(
 			    'type' => 'checkbox',
 			    'std'  => 0, // 0 or 1
 			),
-			array(
-				'name'       => 'Location',
-				'id'         => 'aa_event_location',
-				'type'       => 'text',
-			),
+		),
+		'validation' => array(
+		    'rules'  => array(
+		        'aa_event_start_datetime' => array(
+		            'required'  => true,
+		        ),
+		    ),
+		    'messages' => array(
+		        'aa_event_start_datetime' => array(
+		            'required'  => 'Bitte gib ein Starttermin an.',
+		        ),
+		    )
 		),
 	);
+	
+	
 	
 // Meta Boxes auf Jobs	
 	
