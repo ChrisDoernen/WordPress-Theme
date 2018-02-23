@@ -28,13 +28,13 @@
 					</div>
 					<div class="row">
                         <div class="">
-                            <?php 
+                            <?php
                                 $argu = array(
                                     'post_type' => 'events',
                                     'orderby' => 'meta_value_num', 
                                     'meta_key'=> 'aa_event_start_datetime',
                                     'order' => 'ASC',
-                                    'meta_value' => strftime('%Y%m%d, 00:00', strtotime("-2 week")),
+                                    'meta_value' => strtotime("-2 week"),
                                     'meta_compare' => '>',
                                     'tax_query' => array(
                                     array(
@@ -52,6 +52,7 @@
     							    
     								while ($the_query->have_posts()) 
     								{
+                                        $currentMonth = null;
                                         $the_query->the_post();
                                         $link = get_permalink();
                                         
@@ -63,43 +64,43 @@
                                         $title = get_the_title();
                                         
                                         $date = date_create();
-                                        $start = date_create_from_format('Ymd, G:i', rwmb_meta('aa_event_start_datetime'));
-                                        $end = date_create_from_format('Ymd, G:i', rwmb_meta('aa_event_end_datetime'));
+                                        $start = rwmb_meta('aa_event_start_datetime');
+                                        $end = rwmb_meta('aa_event_end_datetime');
                                         
                                         // Datetime for displaying months
                                         $globalMonth = $currentMonth;
                                         
                                         // Start and end date are the same
-    									if (empty($end) || $start->format('Ymd') == $end->format('Ymd')) 
+    									if (empty($end) || date('Ymd', $start) == date('Ymd', $end)) 
     									{
-                                            $datetime = strftime('%a, %d. %b', $start->getTimestamp());
+                                            $datetime = strftime('%a, %d. %b', $start);
                                             $end = $start;
                                         }
                                         // Start and end date are different
                                         else 
                                         {
                                             // Same month
-                                            if($start->format('Ym') == $end->format('Ym'))
+                                            if(date('Ym', $start) == date('Ym', $end))
                                             {
-                                                $datetime = strftime('%a, %d.', $start->getTimestamp()).' - '.strftime('%a, %d. %b', $end->getTimestamp());
+                                                $datetime = strftime('%a, %d.', $start).' - '.strftime('%a, %d. %b', $end);
                                             }
                                             // Different month
                                             else
                                             {
-                                                $datetime = strftime('%a, %d. %b', $start->getTimestamp()).' - '.strftime('%a, %d. %b', $end->getTimestamp());
+                                                $datetime = strftime('%a, %d. %b', $start).' - '.strftime('%a, %d. %b', $end);
                                             }
                                         }
                                         
-                                        if($end->getTimestamp() < time())
+                                        if($end < time())
                                         {
                                             $eventIsOver = true;
                                         }
                                         
-                                        $currentMonth = strftime('%m', $start->getTimestamp());
+                                        $currentMonth = strftime('%m', $start);
                                         
                                         if($globalMonth != $currentMonth)
                                         {
-                                          echo '<div class="month-changing"><span>'.strftime('%B', $start->getTimestamp()).'</span></div>';   
+                                          echo '<div class="month-changing"><span>'.strftime('%B', $start).'</span></div>';   
                                         }
                                         
                                         include (get_template_directory().'/card-events.php');

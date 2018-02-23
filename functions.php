@@ -41,9 +41,9 @@ function enqueue_styles_and_scripts() {
     wp_enqueue_style( 'styles', get_template_directory_uri().'/css/styles.css' );
     
     wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
-    wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700', array(), null, all );
-    wp_enqueue_style( 'rocksalt', 'https://fonts.googleapis.com/css?family=Rock+Salt', array(), null, all );
-    wp_enqueue_style( 'muli', 'https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i', array(), null, all);
+    wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700', array(), null );
+    wp_enqueue_style( 'rocksalt', 'https://fonts.googleapis.com/css?family=Rock+Salt', array(), null );
+    wp_enqueue_style( 'muli', 'https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i', array(), null);
     
     wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '', true );
     wp_enqueue_script( 'backTop', get_template_directory_uri() . '/js/backTop.js', array(), '', true );
@@ -639,10 +639,10 @@ $meta_boxes[] = array(
 					'showTimepicker' => true,
 					'stepMinute' => '5',
 					'separator' => ', ',
-					'dateFormat' => 'yymmdd',
-					'timeFormat' => 'HH:mm',
+					'dateFormat' => 'dd.mm.yy',
+					'timeFormat' => "HH:mm 'Uhr'",
 					'regional' => 'de',
-					'defaultValue' => '00:00',
+					'defaultValue' => "00:00 'Uhr'",
 				),
 			),
             array(
@@ -656,10 +656,10 @@ $meta_boxes[] = array(
 					'showTimepicker' => true,
 					'stepMinute' => '5',
 					'separator' => ', ',
-					'dateFormat' => 'yymmdd',
-					'timeFormat' => 'HH:mm',
+					'dateFormat' => 'dd.mm.yy',
+					'timeFormat' => "HH:mm 'Uhr'",
 					'regional' => 'de',
-					'defaultValue' => '00:00',
+					'defaultValue' => "00:00 'Uhr'",
 				),
 			),
 			array(
@@ -726,6 +726,24 @@ $meta_boxes[] = array(
 
     return $meta_boxes;
 }
+
+/**
+ * Save datetime as timestamp in the database
+ */
+
+add_filter( 'rwmb_aa_event_start_datetime_value', function( $value ) {
+    return $value ? date_create_from_format('d.m.Y, H:i \U\h\r', $value )->getTimestamp() : '';
+} );
+add_filter( 'rwmb_aa_event_start_datetime_field_meta', function( $value ) {
+    return $value ? date( 'd.m.Y, H:i', $value ).' Uhr' : '';
+} );
+
+add_filter( 'rwmb_aa_event_end_datetime_value', function( $value ) {
+    return $value ? date_create_from_format('d.m.Y, H:i \U\h\r', $value )->getTimestamp() : '';
+} );
+add_filter( 'rwmb_aa_event_end_datetime_field_meta', function( $value ) {
+    return $value ? date( 'd.m.Y, H:i', $value ).' Uhr' : '';
+} );
 
 
 /**

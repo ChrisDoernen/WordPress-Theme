@@ -10,7 +10,7 @@
         <div class="col-sm-6 ">
             <h5 class="card-events__date <?php if($eventIsOver){echo ' event-is-over';}?>"><?php echo $datetime; ?></h5>
             <a href="<?php echo $link; ?>" >
-                <h3 class="card-events__title <?php if($eventIsOver){echo ' event-is-over';}?>" <?php echo $style; ?>><?php echo $title; ?></h3>
+                <h3 class="card-events__title <?php if($eventIsOver){echo ' event-is-over';}?>"><?php echo $title; ?></h3>
             </a>
             <a class="card-events__more" href="<?php echo $link; ?>" >
                 <span class="<?php if($eventIsOver){echo ' event-is-over';}?>">mehr Infos</span>

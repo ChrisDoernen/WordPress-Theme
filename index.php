@@ -78,12 +78,9 @@
 					<div class="row">
 						<div class="col-sm-6 col-md-6 col-lg-6 ">
 							<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel">
-								<?php 
+								<?php
 									$argu = array(
         							    'post_type' => 'events',
-        							    'meta_key'=> 'aa_event_end_datetime',
-                                        'meta_value' => strftime('%Y%m%d, 00:01', time()),
-                                        'meta_compare' => '>',
                                         'orderby' => 'menu_order',
                                         'order' => 'DESC',
                                         'tax_query' => array(
@@ -103,10 +100,12 @@
 				
 									if ( $the_query->have_posts() ) {
 										while ( $the_query->have_posts() ) {
-											$the_query->the_post();
-											$check = rwmb_meta ( 'aa_event_featured' );
-											$link = get_permalink();
+											if (rwmb_meta ('aa_event_end_datetime') > time()) {
+												continue;
+											}
 											
+											$the_query->the_post();
+											$link = get_permalink();
 											$args = array('size' => 'medium','type' => 'image');
 											$images = rwmb_meta( 'aa_event_gx', $args );
 											reset($images);

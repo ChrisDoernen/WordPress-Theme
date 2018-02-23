@@ -39,13 +39,8 @@
     						    <?php
 									$date = date_create();
 									$showDateOnly = (rwmb_meta('aa_event_show_date_only')); 
-									$start = (rwmb_meta('aa_event_start_datetime') !== '') 
-										? date_create_from_format('Ymd, G:i', rwmb_meta('aa_event_start_datetime'))
-										: false;
-									
-									$end = (rwmb_meta('aa_event_end_datetime') !== '')
-										? date_create_from_format('Ymd, G:i', rwmb_meta ('aa_event_end_datetime'))
-										: false;
+									$start = (rwmb_meta('aa_event_start_datetime'));
+									$end = (rwmb_meta('aa_event_end_datetime'));
 									
 									// If there is no start, we can not display it.
 									if(empty($start)) 
@@ -56,35 +51,35 @@
 									elseif (empty($end) || $start === $end) 
 									{
 										if ($showDateOnly == 0){
-									    	$datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp());
+									    	$datetime = strftime('%a, %d. %b, %H:%M Uhr', $start);
 										}
 										else {
-											$datetime = strftime('%a, %d. %b', $start->getTimestamp());
+											$datetime = strftime('%a, %d. %b', $start);
 										}
 									    $end = $start; // isOver flag relies on end so we need it
 									}
 									// Start and end date are the same, time is different
-									elseif ($start->format('Ymd') == $end->format('Ymd')) 
+									elseif (date('Ymd', $start) == date('Ymd', $end)) 
 									{
 										if ($showDateOnly == 0){
-									    	$datetime = strftime('%a, %d. %b, %H:%M', $start->getTimestamp()).' - '.strftime('%H:%M Uhr', $end->getTimestamp());
+									    	$datetime = strftime('%a, %d. %b, %H:%M', $start).' - '.strftime('%H:%M Uhr', $end);
 										}
 										else {
-											$datetime = strftime('%a, %d. %b', $start->getTimestamp());
+											$datetime = strftime('%a, %d. %b', $start);
 										}
 									}
 									// Start and end have different dates
 									else 
 									{
 										if ($showDateOnly == 0){
-									    	$datetime = strftime('%a, %d. %b, %H:%M Uhr', $start->getTimestamp()).' - '.strftime('%a, %d. %b, %H:%M Uhr', $end->getTimestamp());
+									    	$datetime = strftime('%a, %d. %b, %H:%M Uhr', $start).' - '.strftime('%a, %d. %b, %H:%M Uhr', $end);
 										}
 										else {
-											$datetime = strftime('%a, %d. %b', $start->getTimestamp()).' - '.strftime('%a, %d. %b', $end->getTimestamp());
+											$datetime = strftime('%a, %d. %b', $start).' - '.strftime('%a, %d. %b', $end);
 										}
 									}
 								?>
-                                <?php if($end->getTimestamp() < time()){ $isOver = true;?>
+                                <?php if($end < time()){ $isOver = true;?>
                                     <span class="event-over">
                                         <i class="fa fa-exclamation-circle"></i> 
                                         Das Event liegt in der Vergangenheit. 
@@ -108,14 +103,14 @@
                                 <?php
                                 	if(!empty($datetime))
                                 	{
-	                                    $kb_start = strftime('%Y%m%dT%H%M%S', $start->getTimestamp());
-	                                    $kb_end = strftime('%Y%m%dT%H%M%S', $end->getTimestamp());
+	                                    $kb_start = strftime('%Y%m%dT%H%M%S', $start);
+	                                    $kb_end = strftime('%Y%m%dT%H%M%S', $end);
 	                                    $kb_current_time = '20161026T130000';
 	                                    $kb_title = html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8');
 	                                    $kb_location = preg_replace('/([\,;])/','\\\$1',str_replace("<br>", ", ",rwmb_meta ('aa_event_location'))); 
 	                                    $kb_description = html_entity_decode(strip_tags($content), ENT_COMPAT, 'UTF-8');
 	                                    $kb_url = get_permalink();
-	                                    $kb_file_name = date('Ymd', $startDate).'-'.html_entity_decode($slug);
+	                                    $kb_file_name = date('Ymd', $start).'-'.html_entity_decode($slug);
 	                                    $fileName = get_home_path().'/../live_ical/'.$kb_file_name.'.ics';
 	                                    
 	                                    include (get_template_directory().'/ical-export.php');
