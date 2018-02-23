@@ -78,22 +78,22 @@
 						            </p>
 						       	<?php } ?>
 						       	
-						       	<?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
+						       	<?php if ( rwmb_meta ( 'aa_job_estimated_time' ) != ''){?>
 									<p>
 										<span class="job-meta-info">Zeitaufwand/Woche:</span><br>
 							            <span class="">
-							               <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?>h
+							               <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h
 							            </span>
 						            </p>
 						        <?php } ?>
 							
-								<?php if ( rwmb_meta ( 'ctdn_job_organizationalUnitLeader' ) != ''){?>
+								<?php if ( rwmb_meta ( 'aa_job_ou_leader' ) != ''){?>
 									<p>
 										<span class="job-meta-info">Leiter/Kontaktperson:</span></br>
-										<?php if ( rwmb_meta( 'ctdn_job_ouLeaderImage' ) != "") {
+										<?php if ( rwmb_meta( 'aa_job_ou_leader_image' ) != "") {
 											echo "<img class='job__leaderImage' src=";
 		        								$args = array('size' => 'thumbnail','type' => 'image');
-		        								$images = rwmb_meta( 'ctdn_job_ouLeaderImage', $args );
+		        								$images = rwmb_meta( 'aa_job_ou_leader_image', $args );
 		    									if ( !empty( $images ) ) {
 		    										foreach ( $images as $image ) {
 		    										    echo $image['url'];
@@ -102,7 +102,7 @@
 		    									echo ";'></img>";
 	    									}
 	    								?>
-							            <?php echo rwmb_meta ( 'ctdn_job_organizationalUnitLeader' );?>
+							            <?php echo rwmb_meta ( 'aa_job_ou_leader' );?>
 						            </p>
 						        <?php } ?>
 								

@@ -23,7 +23,7 @@
 								<?php
 									$i=0;
 									$args = array('size' => 'medium','type' => 'image');
-									$images = rwmb_meta('ctdn_home_featured_image', $args);
+									$images = rwmb_meta('aa_home_featured_image', $args);
 									if (!empty($images)) {
 										foreach ( $images as $image ) {
 											echo '<img class="img-responsive" src="'.$image['url'].'"></img>';
@@ -32,9 +32,9 @@
 								?>
 							</div>
 							<div class='featured__heading pull-left'>
-								<a href="<?php echo rwmb_meta('ctdn_home_featured_link'); ?>">
-								    <span><?php echo rwmb_meta ('ctdn_home_featured_text'); ?></span>
-								    <?php echo rwmb_meta ('ctdn_home_featured_subtext'); ?>
+								<a href="<?php echo rwmb_meta('aa_home_featured_link'); ?>">
+								    <span><?php echo rwmb_meta ('aa_home_featured_text'); ?></span>
+								    <?php echo rwmb_meta ('aa_home_featured_subtext'); ?>
 								</a>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 								<?php 
 									$argu = array(
         							    'post_type' => 'events',
-        							    'meta_key'=> 'ctdn_event_end_datetime',
+        							    'meta_key'=> 'aa_event_end_datetime',
                                         'meta_value' => strftime('%Y%m%d, 00:01', time()),
                                         'meta_compare' => '>',
                                         'orderby' => 'menu_order',
@@ -104,11 +104,11 @@
 									if ( $the_query->have_posts() ) {
 										while ( $the_query->have_posts() ) {
 											$the_query->the_post();
-											$check = rwmb_meta ( 'ctdn_event_featured' );
+											$check = rwmb_meta ( 'aa_event_featured' );
 											$link = get_permalink();
 											
 											$args = array('size' => 'medium','type' => 'image');
-											$images = rwmb_meta( 'ctdn_event_gx', $args );
+											$images = rwmb_meta( 'aa_event_gx', $args );
 											reset($images);
 											$firstKey = key($images);
 											$featuredImages[$anz] = $images[$firstKey]['url'];

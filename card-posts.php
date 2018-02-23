@@ -19,7 +19,7 @@
                 <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
             </h4>
             <p class='card-posts__description'>
-                <?php echo rwmb_meta( 'ctdn_SubTitle' );?>
+                <?php echo rwmb_meta( 'aa_SubTitle' );?>
             </p>
         </div>
         <div class="card-posts__meta">

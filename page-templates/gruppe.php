@@ -69,10 +69,10 @@
 				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
 					<div class="row">
 						<?php 
-                    		if (rwmb_meta('ctdn_authorleader_image') != "") 
+                    		if (rwmb_meta('aa_authorleader_image') != "") 
                     		{
                                 $args = array('size' => 'medium','type' => 'image');
-                                $images = rwmb_meta('ctdn_authorleader_image', $args);
+                                $images = rwmb_meta('aa_authorleader_image', $args);
                     			if (!empty($images )) 
                     			{
                     				$imageUrl = reset($images)['url'];
@@ -84,7 +84,7 @@
 					<div class="row">	
 						<div class="col-xs-12 ">
 							<div class='centered'>
-								<a href="<?php echo esc_url(home_url( '/' )).'kontakt'.rwmb_meta('ctdn_contact_get_parameter').'#form';?>" class="btn btn-default" role="button">
+								<a href="<?php echo esc_url(home_url( '/' )).'kontakt'.rwmb_meta('aa_contact_get_parameter').'#form';?>" class="btn btn-default" role="button">
     								<?php
         								if($siteId==25)
         							    {
@@ -135,7 +135,7 @@
 							$ppp = $numberContentCards;
 							$anz = 0;
 							
-							$related_pages = rwmb_meta ('ctdn_related_pages');
+							$related_pages = rwmb_meta ('aa_related_pages');
 							$post_in = array();
 							
 							if (!empty ($related_pages)) 

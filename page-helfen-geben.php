@@ -44,9 +44,9 @@
 					    <?php 
 					    
 					    for ($i=1; $i<2; $i++){
-                            $textfield = 'ctdn_partnertext'.$i;
-                            $logofield = 'ctdn_partnerlogo'.$i;
-                            $linkfield = 'ctdn_partnerlink'.$i;
+                            $textfield = 'aa_partnertext'.$i;
+                            $logofield = 'aa_partnerlogo'.$i;
+                            $linkfield = 'aa_partnerlink'.$i;
 					        if ( rwmb_meta( $logofield ) != "") {
 								$args = array('size' => 'full','type' => 'image');
 								$images = rwmb_meta( $logofield, $args );
@@ -59,9 +59,9 @@
         						    <div class="row">
         						        <div class="col-xs-12 col-ms-6 col-sm-6 ">
                 							<div class="organisation1Image" style="background-image: url(';
-                								if ( rwmb_meta( 'ctdn_partnerbild1' ) != "") {
+                								if ( rwmb_meta( 'aa_partnerbild1' ) != "") {
                     								$args = array('size' => 'full','type' => 'image');
-                    								$images = rwmb_meta( 'ctdn_partnerbild1', $args );
+                    								$images = rwmb_meta( 'aa_partnerbild1', $args );
                 									if ( !empty( $images ) ) {
                 										foreach ( $images as $image ) {
                 										    echo $image['url'];
@@ -94,9 +94,9 @@
 					    <?php 
 					    
 					    for ($i=2; $i<5; $i++){
-                            $textfield = 'ctdn_partnertext'.$i;
-                            $logofield = 'ctdn_partnerlogo'.$i;
-                            $linkfield = 'ctdn_partnerlink'.$i;
+                            $textfield = 'aa_partnertext'.$i;
+                            $logofield = 'aa_partnerlogo'.$i;
+                            $linkfield = 'aa_partnerlink'.$i;
 					        if ( rwmb_meta( $logofield ) != "") {
 								$args = array('size' => 'full','type' => 'image');
 								$images = rwmb_meta( $logofield, $args );
@@ -124,8 +124,8 @@
 						<?php
     					    for ($i=5; $i<6; $i++)
     					    {
-                                $textfield = 'ctdn_partnertext'.$i;
-                                $linkfield = 'ctdn_partnerlink'.$i;
+                                $textfield = 'aa_partnertext'.$i;
+                                $linkfield = 'aa_partnerlink'.$i;
     					        if (rwmb_meta($logofield ) != "") {
     								$args = array('size' => 'full','type' => 'image');
     								$images = rwmb_meta($logofield, $args);
@@ -136,10 +136,10 @@
     						    <div class="organisation">
         						    <div class="organisation5ImageContainer">
             							<div class="organisation5Image" style="background-image: url(';
-            								if (rwmb_meta( 'ctdn_partnerbild5' ) != "")
+            								if (rwmb_meta( 'aa_partnerbild5' ) != "")
             								{
                 								$args = array('size' => 'full','type' => 'image');
-                								$images = rwmb_meta( 'ctdn_partnerbild5', $args );
+                								$images = rwmb_meta( 'aa_partnerbild5', $args );
             									if (!empty($images)) {
             										foreach ($images as $image)
             										{
@@ -190,10 +190,10 @@
 				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
 					<div class="row">
 						<?php 
-                    		if (rwmb_meta('ctdn_authorleader_image') != "") 
+                    		if (rwmb_meta('aa_authorleader_image') != "") 
                     		{
                                 $args = array('size' => 'medium','type' => 'image');
-                                $images = rwmb_meta('ctdn_authorleader_image', $args);
+                                $images = rwmb_meta('aa_authorleader_image', $args);
                     			if (!empty($images )) 
                     			{
                     				$imageUrl = reset($images)['url'];

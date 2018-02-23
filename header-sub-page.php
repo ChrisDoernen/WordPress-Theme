@@ -9,13 +9,13 @@
 	</div>  
 	
 	<?php
-		if (!empty(rwmb_meta('ctdn_group_logo'))) 
+		if (!empty(rwmb_meta('aa_group_logo'))) 
 		{
 			echo "<div class='group-logo'>
 			<img class='img-responsive' src='";
 			
 			$args = array('size' => 'full','type' => 'image');
-			$images = rwmb_meta('ctdn_group_logo', $args);
+			$images = rwmb_meta('aa_group_logo', $args);
 			if (!empty($images)) 
 			{
 				foreach ($images as $image) 

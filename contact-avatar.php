@@ -7,8 +7,8 @@
 		</div>
 		<div class="col-xs-8">
 			<div class="contact-area__contact-person-info height-target">
-				<?php echo rwmb_meta('ctdn_authorleader_name'); ?>,</br>
-				<?php echo rwmb_meta('ctdn_authorleader_position');?>
+				<?php echo rwmb_meta('aa_authorleader_name'); ?>,</br>
+				<?php echo rwmb_meta('aa_authorleader_position');?>
 			</div>
 		</div>
 	</div>	

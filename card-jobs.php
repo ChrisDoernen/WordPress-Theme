@@ -6,7 +6,7 @@
         </a>
     
         <p>
-            <?php echo rwmb_meta ( 'ctdn_job_desc' ); ?>
+            <?php echo rwmb_meta ( 'aa_job_desc' ); ?>
         </p>
         
         <?php $terms = get_the_terms($post->ID, "Job-Kategorie");
@@ -29,9 +29,9 @@
             <?php }
         } ?>
         
-        <?php if ( rwmb_meta ( 'ctdn_job_estimatedTime' ) != ''){?>
+        <?php if ( rwmb_meta ( 'aa_job_estimated_time' ) != ''){?>
             <span class="job-tag ">
-                <?php echo rwmb_meta ( 'ctdn_job_estimatedTime' );?>h
+                <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h
             </span>
         <?php } ?>
         

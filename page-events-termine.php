@@ -32,7 +32,7 @@
                                 $argu = array(
                                     'post_type' => 'events',
                                     'orderby' => 'meta_value_num', 
-                                    'meta_key'=> 'ctdn_event_start_datetime',
+                                    'meta_key'=> 'aa_event_start_datetime',
                                     'order' => 'ASC',
                                     'meta_value' => strftime('%Y%m%d, 00:00', strtotime("-2 week")),
                                     'meta_compare' => '>',
@@ -56,15 +56,15 @@
                                         $link = get_permalink();
                                         
                                         $args = array('size' => 'medium','type' => 'image');
-                                        $images = rwmb_meta('ctdn_event_gx', $args);
+                                        $images = rwmb_meta('aa_event_gx', $args);
                                         reset($images);
                                         $firstKey = key($images);
                                         $url = $images[$firstKey]['url'];
                                         $title = get_the_title();
                                         
                                         $date = date_create();
-                                        $start = date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_start_datetime'));
-                                        $end = date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_end_datetime'));
+                                        $start = date_create_from_format('Ymd, G:i', rwmb_meta('aa_event_start_datetime'));
+                                        $end = date_create_from_format('Ymd, G:i', rwmb_meta('aa_event_end_datetime'));
                                         
                                         // Datetime for displaying months
                                         $globalMonth = $currentMonth;

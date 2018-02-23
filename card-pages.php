@@ -10,7 +10,7 @@
                 <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
             </h4>
             <p class='card-pages__description'>
-                <?php echo rwmb_meta( 'ctdn_card_description' );?>
+                <?php echo rwmb_meta( 'aa_card_description' );?>
             </p>
         </div>
     </div>

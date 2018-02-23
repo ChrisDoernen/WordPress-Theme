@@ -43,7 +43,7 @@
                 		<div class="col-xs-12">
 							<div class="">
 								 <h1 class='left'><?php echo get_the_title();?></h1>
-								 <h2 ><?php echo rwmb_meta('ctdn_SubTitle'); ?></h2>
+								 <h2 ><?php echo rwmb_meta('aa_SubTitle'); ?></h2>
 							</div>
 						</div>
 	                </div>
@@ -102,7 +102,7 @@
 							$ppp = $numberContentCards;
 							$anz = 0;
 							
-							$related_posts = rwmb_meta ( 'ctdn_related_posts' );
+							$related_posts = rwmb_meta ( 'aa_related_posts' );
 							
 							if (!empty ($related_posts)) 
 							{

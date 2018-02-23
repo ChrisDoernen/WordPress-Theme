@@ -19,9 +19,9 @@
                         <div class="col-xs-12 col-sm-6">
 							<div class="">
 								 <?php 
-        							if ( rwmb_meta( 'ctdn_event_gx' ) != "") {
+        							if ( rwmb_meta( 'aa_event_gx' ) != "") {
         								$args = array('size' => $imageSize,'type' => 'image');
-        								$images = rwmb_meta( 'ctdn_event_gx', $args );
+        								$images = rwmb_meta( 'aa_event_gx', $args );
         								
         								if ( !empty( $images ) ) {
         									foreach ( $images as $image ) {
@@ -38,13 +38,13 @@
 							<div class="event__infos">
     						    <?php
 									$date = date_create();
-									$showDateOnly = (rwmb_meta('ctdn_event_show_date_only')); 
-									$start = (rwmb_meta('ctdn_event_start_datetime') !== '') 
-										? date_create_from_format('Ymd, G:i', rwmb_meta('ctdn_event_start_datetime'))
+									$showDateOnly = (rwmb_meta('aa_event_show_date_only')); 
+									$start = (rwmb_meta('aa_event_start_datetime') !== '') 
+										? date_create_from_format('Ymd, G:i', rwmb_meta('aa_event_start_datetime'))
 										: false;
 									
-									$end = (rwmb_meta('ctdn_event_end_datetime') !== '')
-										? date_create_from_format('Ymd, G:i', rwmb_meta ('ctdn_event_end_datetime'))
+									$end = (rwmb_meta('aa_event_end_datetime') !== '')
+										? date_create_from_format('Ymd, G:i', rwmb_meta ('aa_event_end_datetime'))
 										: false;
 									
 									// If there is no start, we can not display it.
@@ -96,8 +96,8 @@
 								<h1 id="" class='event__heading'><?php echo get_the_title();?></h1>
 								<div class="event__location">
 									<i class="fa fa-map-marker"></i> &nbsp;
-								    <a href="https://www.google.de/maps/search/<?php echo str_replace("<br>", "", rwmb_meta ('ctdn_event_location')); ?>" class="event__link" target="_blank">
-								        <?php echo rwmb_meta ('ctdn_event_location'); ?>
+								    <a href="https://www.google.de/maps/search/<?php echo str_replace("<br>", "", rwmb_meta ('aa_event_location')); ?>" class="event__link" target="_blank">
+								        <?php echo rwmb_meta ('aa_event_location'); ?>
 								    </a>
 								</div>
                                 <?php
@@ -112,7 +112,7 @@
 	                                    $kb_end = strftime('%Y%m%dT%H%M%S', $end->getTimestamp());
 	                                    $kb_current_time = '20161026T130000';
 	                                    $kb_title = html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8');
-	                                    $kb_location = preg_replace('/([\,;])/','\\\$1',str_replace("<br>", ", ",rwmb_meta ('ctdn_event_location'))); 
+	                                    $kb_location = preg_replace('/([\,;])/','\\\$1',str_replace("<br>", ", ",rwmb_meta ('aa_event_location'))); 
 	                                    $kb_description = html_entity_decode(strip_tags($content), ENT_COMPAT, 'UTF-8');
 	                                    $kb_url = get_permalink();
 	                                    $kb_file_name = date('Ymd', $startDate).'-'.html_entity_decode($slug);

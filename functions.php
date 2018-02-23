@@ -183,7 +183,7 @@ add_action('init', 'create_jobs_taxonomy', 0);
 /**
  * Jobs filter function
  */
-function ctdn_jobs_loop_and_filter(){
+function aa_jobs_loop_and_filter(){
 	$args = array(
 		'post_type' => 'jobs',
 	);
@@ -247,8 +247,8 @@ function ctdn_jobs_loop_and_filter(){
 }
  
  
-add_action('wp_ajax_jobfilter', 'ctdn_jobs_loop_and_filter'); 
-add_action('wp_ajax_nopriv_jobfilter', 'ctdn_jobs_loop_and_filter');
+add_action('wp_ajax_jobfilter', 'aa_jobs_loop_and_filter'); 
+add_action('wp_ajax_nopriv_jobfilter', 'aa_jobs_loop_and_filter');
 
 /**
  * Define meta boxes
@@ -266,7 +266,7 @@ $meta_boxes[] = array(
     'fields' => array(
 		array (
 			'name'  => '600x400px',
-			'id'    => 'ctdn_home_featured_image',
+			'id'    => 'aa_home_featured_image',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
@@ -274,7 +274,7 @@ $meta_boxes[] = array(
 		array(
 			'name'  => 'Text',
          	'desc'  => '',
-			'id'    => 'ctdn_home_featured_text',
+			'id'    => 'aa_home_featured_text',
 			'type'  => 'text',
 			'std'   => '',
 			'class' => 'custom-class',
@@ -283,7 +283,7 @@ $meta_boxes[] = array(
         array(
 			'name'  => 'Sub-Text',
          	'desc'  => '',
-			'id'    => 'ctdn_home_featured_subtext',
+			'id'    => 'aa_home_featured_subtext',
 			'type'  => 'text',
 			'std'   => '',
 			'class' => 'custom-class',
@@ -292,7 +292,7 @@ $meta_boxes[] = array(
        	array(
 			'name'  => 'Link',
          	'desc'  => '',
-			'id'    => 'ctdn_home_featured_link',
+			'id'    => 'aa_home_featured_link',
 			'type'  => 'text',
 			'std'   => '',
 			'class' => 'custom-class',
@@ -313,7 +313,7 @@ $meta_boxes[] = array(
     'fields' => array(
 		array(
 			'name'  => 'Textbox',
-			'id'    => 'ctdn_section_3',
+			'id'    => 'aa_section_3',
 			'type'  => 'wysiwyg',
         ),
     ),
@@ -330,7 +330,7 @@ $meta_boxes[] = array(
     'fields' => array(
 		array(
 			'name'  => 'Textbox',
-			'id'    => 'ctdn_section_5',
+			'id'    => 'aa_section_5',
 			'type'  => 'wysiwyg',
         ),
     ),
@@ -348,14 +348,14 @@ $meta_boxes[] = array(
     'fields' => array(
         array (
 			'name'  => 'Logo Card 1',
-			'id'    => 'ctdn_partnerlogo1',
+			'id'    => 'aa_partnerlogo1',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
 		array(
 			'name'  => 'Beschreibung Card 1',
-			'id'    => 'ctdn_partnertext1',
+			'id'    => 'aa_partnertext1',
 			'type' => 'WYSIWYG',
 			'raw' => 'true',
 			'options' => array(
@@ -366,21 +366,21 @@ $meta_boxes[] = array(
         ),
         array (
 			'name'  => 'Großes Bild Card 1',
-			'id'    => 'ctdn_partnerbild1',
+			'id'    => 'aa_partnerbild1',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
         array (
 			'name'  => 'Logo Card 2',
-			'id'    => 'ctdn_partnerlogo2',
+			'id'    => 'aa_partnerlogo2',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
 		array(
 			'name'  => 'Beschreibung Card 2',
-			'id'    => 'ctdn_partnertext2',
+			'id'    => 'aa_partnertext2',
 			'type' => 'WYSIWYG',
 			'raw' => 'true',
 			'options' => array(
@@ -391,14 +391,14 @@ $meta_boxes[] = array(
         ),
         array (
 			'name'  => 'Logo Card 3',
-			'id'    => 'ctdn_partnerlogo3',
+			'id'    => 'aa_partnerlogo3',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
 		array(
 			'name'  => 'Beschreibung Card 3',
-			'id'    => 'ctdn_partnertext3',
+			'id'    => 'aa_partnertext3',
 			'type' => 'WYSIWYG',
 			'raw' => 'true',
 			'options' => array(
@@ -409,14 +409,14 @@ $meta_boxes[] = array(
         ),
         array (
 			'name'  => 'Logo Card 4',
-			'id'    => 'ctdn_partnerlogo4',
+			'id'    => 'aa_partnerlogo4',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
 		array(
 			'name'  => 'Beschreibung Card 4',
-			'id'    => 'ctdn_partnertext4',
+			'id'    => 'aa_partnertext4',
 			'type' => 'WYSIWYG',
 			'raw' => 'true',
 			'options' => array(
@@ -427,21 +427,21 @@ $meta_boxes[] = array(
         ),
         array (
 			'name'  => 'Logo Card 5',
-			'id'    => 'ctdn_partnerlogo5',
+			'id'    => 'aa_partnerlogo5',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
         array (
 			'name'  => 'Bild Card 5',
-			'id'    => 'ctdn_partnerbild5',
+			'id'    => 'aa_partnerbild5',
 			'type'  => 'image_advanced',
 			'max_file_uploads' => '1',
 			'force_delete' => false,
 		),
 		array(
 			'name'  => 'Beschreibung Card 5',
-			'id'    => 'ctdn_partnertext5',
+			'id'    => 'aa_partnertext5',
 			'type' => 'WYSIWYG',
 			'raw' => 'true',
 			'options' => array(
@@ -468,21 +468,21 @@ $meta_boxes[] = array(
         'fields' => array(
 			array(
 				'name'  => 'Name',
-				'id'    => 'ctdn_authorleader_name',
+				'id'    => 'aa_authorleader_name',
 				'type'  => 'text',
 				'class' => 'custom-class',
 				'clone' => false,
            	),
            	array(
 				'name'  => 'Position',
-				'id'    => 'ctdn_authorleader_position',
+				'id'    => 'aa_authorleader_position',
 				'type'  => 'text',
 				'class' => 'custom-class',
 				'clone' => false,
            	),
 			array (
 				'name'  => 'Profilbild (500x500px)',
-				'id'    => 'ctdn_authorleader_image',
+				'id'    => 'aa_authorleader_image',
 				'type'  => 'image_advanced',
 				'max_file_uploads' => '1',
 				'force_delete' => false,
@@ -503,7 +503,7 @@ $meta_boxes[] = array(
 			array(
 				'name'  => 'Beschreibung für Cards',
              	'desc'  => '',
-				'id'    => 'ctdn_card_description',
+				'id'    => 'aa_card_description',
 				'type'  => 'text',
 				'std'   => '',
 				'class' => 'custom-class',
@@ -511,7 +511,7 @@ $meta_boxes[] = array(
            	),
 			array (
 				'name'  => 'Logo der Gruppe, falls vorhanden',
-				'id'    => 'ctdn_group_logo',
+				'id'    => 'aa_group_logo',
 				'type'  => 'image_advanced',
 				'max_file_uploads' => '1',
 				'force_delete' => false,
@@ -531,7 +531,7 @@ $meta_boxes[] = array(
 			array(
 				'name'  => 'Verwandte Seiten, max. 3',
              	'desc'  => '',
-				'id'    => 'ctdn_related_pages',
+				'id'    => 'aa_related_pages',
 				'type'  => 'text',
 				'std'   => '',
 				'class' => 'custom-class',
@@ -552,7 +552,7 @@ $meta_boxes[] = array(
         'fields' => array(
 			array(
 				'name'  => 'Get-Parameter',
-				'id'    => 'ctdn_contact_get_parameter',
+				'id'    => 'aa_contact_get_parameter',
 				'type'  => 'text',
 				'class' => 'custom-class',
 				'clone' => false,
@@ -574,7 +574,7 @@ $meta_boxes[] = array(
 			array(
 				'name'  => 'Untertitel',
              	'desc'  => '',
-				'id'    => 'ctdn_SubTitle',
+				'id'    => 'aa_SubTitle',
 				'type'  => 'text',
 				'std'   => '',
 				'class' => 'custom-class',
@@ -592,7 +592,7 @@ $meta_boxes[] = array(
 			array(
 				'name'  => 'Verwandte Beiträge, max. 3',
              	'desc'  => '',
-				'id'    => 'ctdn_related_posts',
+				'id'    => 'aa_related_posts',
 				'type'  => 'text',
 				'std'   => '',
 				'class' => 'custom-class',
@@ -614,7 +614,7 @@ $meta_boxes[] = array(
         'fields' => array(
 			array (
 				'name'  => 'Flyer, erste Datei wird bei Events und Termine angezeigt',
-				'id'    => 'ctdn_event_gx',
+				'id'    => 'aa_event_gx',
 				'type'  => 'image_advanced',
 				'max_file_uploads' => '2',
 				'force_delete' => false,
@@ -630,7 +630,7 @@ $meta_boxes[] = array(
         'fields' => array(
             array(
 				'name'       => 'Starttermin',
-				'id'         => 'ctdn_event_start_datetime',
+				'id'         => 'aa_event_start_datetime',
 				'type'       => 'datetime',
 				// jQuery datetime picker options.
 				// For date options, see here http://api.jqueryui.com/datepicker
@@ -647,7 +647,7 @@ $meta_boxes[] = array(
 			),
             array(
 				'name'       => 'Endtermin',
-				'id'         => 'ctdn_event_end_datetime',
+				'id'         => 'aa_event_end_datetime',
 				'type'       => 'datetime',
 				// jQuery datetime picker options.
 				// For date options, see here http://api.jqueryui.com/datepicker
@@ -664,13 +664,13 @@ $meta_boxes[] = array(
 			),
 			array(
 			    'name' => 'Zeige nur das Datum',
-			    'id'   => 'ctdn_event_show_date_only',
+			    'id'   => 'aa_event_show_date_only',
 			    'type' => 'checkbox',
 			    'std'  => 0, // 0 or 1
 			),
 			array(
 				'name'       => 'Location',
-				'id'         => 'ctdn_event_location',
+				'id'         => 'aa_event_location',
 				'type'       => 'text',
 			),
 		),
@@ -686,7 +686,7 @@ $meta_boxes[] = array(
         'fields' => array(
         	array(
 			'name'  => 'Knappe Beschreibung des Jobs für die Übersicht.',
-			'id'    => 'ctdn_job_desc',
+			'id'    => 'aa_job_desc',
 			'type' => 'textarea',
 			),
 		),
@@ -700,17 +700,17 @@ $meta_boxes[] = array(
         'fields' => array(
         	array (
 				'name'        => 'Geschätzte Stunden Pro Woche',
-			    'id'          => 'ctdn_job_estimatedTime',
+			    'id'          => 'aa_job_estimated_time',
 			    'type'        => 'text',
 		    ),
 		    array (
 				'name'        => 'Leiter',
-			    'id'          => 'ctdn_job_organizationalUnitLeader',
+			    'id'          => 'aa_job_ou_leader',
 			    'type'        => 'text',
 		    ),
 			array (
 				'name'  => 'Bild des Leiters',
-				'id'    => 'ctdn_job_ouLeaderImage',
+				'id'    => 'aa_job_ou_leader_image',
 				'type'  => 'image_advanced',
 				'max_file_uploads' => '1',
 				'force_delete' => false,
@@ -864,15 +864,15 @@ add_action( 'rest_api_init', function () {
 } );
 
 function get_event_startdatetime($post, $field_name, $request) {
-	return get_post_meta($post['id'], 'ctdn_event_start_datetime', true );
+	return get_post_meta($post['id'], 'aa_event_start_datetime', true );
 }
 
 function get_event_enddatetime($post, $field_name, $request) {
-	return get_post_meta($post['id'], 'ctdn_event_end_datetime', true );
+	return get_post_meta($post['id'], 'aa_event_end_datetime', true );
 }
 
 function get_event_artwork($post, $field_name, $request) {
-	return get_post_meta($post['id'], 'ctdn_event_gx', true );
+	return get_post_meta($post['id'], 'aa_event_gx', true );
 }
 
  
@@ -880,9 +880,9 @@ function get_event_artwork($post, $field_name, $request) {
  /**
  * Disable all other than p, h3, h4 in Editor
  */ 
-function ctdn_disable_block_formats($arr){
+function aa_disable_block_formats($arr){
     $arr['block_formats'] = 'Paragraph=p;Heading 3=h3;Heading 4=h4;';
     return $arr;
   }
-add_filter('tiny_mce_before_init', 'ctdn_disable_block_formats');
+add_filter('tiny_mce_before_init', 'aa_disable_block_formats');
  
