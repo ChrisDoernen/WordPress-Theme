@@ -2,7 +2,7 @@ Changelog:
 
 1.6.0
 - Change custom field prefix
-- 
+- Store event location in different filds with predefined options
 
 
 

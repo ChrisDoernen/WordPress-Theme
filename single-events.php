@@ -90,9 +90,14 @@
 								<?php }?>
 								<h1 id="" class='event__heading'><?php echo get_the_title();?></h1>
 								<div class="event__location">
-									<i class="fa fa-map-marker"></i> &nbsp;
-								    <a href="https://www.google.de/maps/search/<?php echo str_replace("<br>", "", rwmb_meta ('aa_event_location')); ?>" class="event__link" target="_blank">
-								        <?php echo rwmb_meta ('aa_event_location'); ?>
+									<i class="fa fa-map-marker"></i>
+								    <a href="https://www.google.de/maps/search/<?php echo rwmb_meta ('aa_event_location_location').' '.rwmb_meta ('aa_event_location_street').' '.rwmb_meta ('aa_event_location_city'); ?>" class="event__link" target="_blank">
+								        <?php 
+								        	echo rwmb_meta ('aa_event_location_location'); 
+								        	if (rwmb_meta ('aa_event_location_street') != '') {echo ',<br />'.rwmb_meta ('aa_event_location_street'); }
+								        	if (rwmb_meta ('aa_event_location_city') != '') {echo ',<br />'.rwmb_meta ('aa_event_location_city'); }
+								        	if (rwmb_meta ('aa_event_location_info') != '') {echo '<br />'.rwmb_meta ('aa_event_location_info'); }
+								        ?>
 								    </a>
 								</div>
                                 <?php

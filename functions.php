@@ -683,7 +683,69 @@ $meta_boxes[] = array(
 		),
 	);
 	
-	
+	$meta_boxes[] = array(
+        'title'    => 'Location',
+        'post_types' => array( 'events' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+			array(
+			    'name'        => 'Location',
+			    'id'          => 'aa_event_location_location',
+			    'type'        => 'text',
+			    'placeholder' => 'Z.B. FCG ARCHE Augsburg',
+			    'size'        => 30,
+			    'datalist'    => array(
+			        'options' => array(
+			            'FCG ARCHE Augsburg',
+			        ),
+			    ),
+			),
+			array(
+			    'name'        => 'Straße und Hausnummer',
+			    'id'          => 'aa_event_location_street',
+			    'type'        => 'text',
+			    'placeholder' => 'Z.B. Siegfried-Aufhäuser-Str. 19a',
+			    'size'        => 30,
+			    'datalist'    => array(
+			        'options' => array(
+			            'Siegfried-Aufhäuser-Str. 19a',
+			        ),
+			    ),
+			),
+			array(
+			    'name'        => 'Postleitzahl und Ort',
+			    'id'          => 'aa_event_location_city',
+			    'type'        => 'text',
+			    'placeholder' => 'Z.B. 86157 Augsburg',
+			    'size'        => 30,
+			    'datalist'    => array(
+			        'options' => array(
+			            '86157 Augsburg',
+			        ),
+			    ),
+			),
+			array(
+			    'name'        => 'Zusatzinfo',
+			    'id'          => 'aa_event_location_info',
+			    'type'        => 'text',
+			    'placeholder' => 'Z.B. Kleiner Saal (Raum E10)',
+			    'size'        => 30,
+			),
+		),
+		'validation' => array(
+		    'rules'  => array(
+		        'aa_event_location_location' => array(
+		            'required'  => true,
+		        ),
+		    ),
+		    'messages' => array(
+		        'aa_event_location_location' => array(
+		            'required'  => 'Bitte gib eine Location an.',
+		        ),
+		    ),
+		),
+	);
 	
 // Meta Boxes auf Jobs	
 	
