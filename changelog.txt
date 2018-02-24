@@ -1,5 +1,13 @@
 Changelog:
 
+1.6.2
+- Event datetime default value
+- Bugfixe blog category archieves
+
+1.6.1
+- Bugfix index loop
+- Minor meta box enhancements
+
 1.6.0
 - Change custom field prefix
 - Store event location in different filds with predefined options

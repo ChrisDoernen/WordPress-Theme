@@ -91,7 +91,7 @@
 									<h2 class="section__heading blog-category">'.$value->name.'</h2>
 									    <div class="pull-right blogShowAll">
 										<a href="';
-                							echo esc_url( home_url( '/' ) ).'category/'.$value->slug;			
+                							echo esc_url( home_url( '/' ) ).$value->slug;			
                 							echo '"><span class=hidden-xs hidden-ms">alle anzeigen</span><i class="fa fa-th"></i>
                 						</a>
 									</div>

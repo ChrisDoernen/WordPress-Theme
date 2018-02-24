@@ -60,7 +60,7 @@
 .card-posts__image:after,
 .card-pages__image:after {
     background: white;
-    bottom: 0px;
+    bottom: -1px;
     content: '';
     display: block;
     height: 5px;
