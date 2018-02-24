@@ -100,11 +100,19 @@
 				
 									if ( $the_query->have_posts() ) {
 										while ( $the_query->have_posts() ) {
-											if (rwmb_meta ('aa_event_end_datetime') > time()) {
+											$the_query->the_post();
+											$start = rwmb_meta('aa_event_start_datetime');
+	                                        $end = rwmb_meta('aa_event_end_datetime');
+	                                        
+	                                        // Start and end date are the same
+	    									if (empty($end) || date('Ymd', $start) == date('Ymd', $end)) 
+	    									{
+	                                            $end = $start;
+	                                        }
+											if ($end < time()) {
 												continue;
 											}
 											
-											$the_query->the_post();
 											$link = get_permalink();
 											$args = array('size' => 'medium','type' => 'image');
 											$images = rwmb_meta( 'aa_event_gx', $args );

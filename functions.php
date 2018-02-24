@@ -607,13 +607,13 @@ $meta_boxes[] = array(
 // Meta Boxes auf Events	
 	
 	$meta_boxes[] = array(
-        'title'    => 'Flyer',
+        'title'    => 'Designs/Flyer',
         'post_types' => array( 'events' ),
         'context'  => 'normal',
         'priority' => 'high',
         'fields' => array(
 			array (
-				'name'  => 'Flyer, erste Datei wird bei Events und Termine angezeigt',
+				'name'  => 'Grafiken',
 				'id'    => 'aa_event_gx',
 				'type'  => 'image_advanced',
 				'max_file_uploads' => '2',
@@ -663,7 +663,8 @@ $meta_boxes[] = array(
 				),
 			),
 			array(
-			    'name' => 'Zeige nur das Datum',
+			    'name' => 'Ganztägig',
+			    'label_description' => 'Bei ganztägigen Terminen wird nur das Datum angezeigt.',
 			    'id'   => 'aa_event_show_date_only',
 			    'type' => 'checkbox',
 			    'std'  => 0, // 0 or 1
