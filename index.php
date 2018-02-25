@@ -294,12 +294,12 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 multiBtn">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>wachsen/alpha-kurs" class="btn btn-default btn-oneline" role="button">alpha-Kurs </a>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>wachsen/welcome-to-church-party" class="btn btn-default " role="button">Welcome To <br>Church Party</a>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>wachsen/kleingruppen" class="btn btn-default " role="button">Kleingruppe <br> finden</a>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>wachsen/taufe" class="btn btn-default btn-oneline" role="button">Taufe </a>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>wachsen/mitarbeit" class="btn btn-default btn-oneline" role="button">Mitarbeit</a>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>wachsen/gebet-und-gespraech" class="btn btn-default" role="button">Gebet und<br> Gespräch</a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt/alpha-kurs" class="btn btn-default btn-oneline" role="button">alpha-Kurs </a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt/welcome-to-church-party" class="btn btn-default " role="button">Welcome To <br>Church Party</a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt/kleingruppen" class="btn btn-default " role="button">Kleingruppe <br> finden</a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt/taufe" class="btn btn-default btn-oneline" role="button">Taufe </a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt/mitarbeit" class="btn btn-default btn-oneline" role="button">Mitarbeit</a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt/gebet-und-gespraech" class="btn btn-default" role="button">Gebet und<br> Gespräch</a>
 							</div>
 						</div>
 					</div>
