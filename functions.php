@@ -305,39 +305,39 @@ $meta_boxes[] = array(
 );	
 
 ////////////////////////////////////////// Über uns
-$meta_boxes[] = array(
-    'title'    => 'Abschnitt 3',
-    'post_types' => array( 'page' ),
-    'context'  => 'normal',
-    'priority' => 'high',
-    'fields' => array(
-		array(
-			'name'  => 'Textbox',
-			'id'    => 'aa_section_3',
-			'type'  => 'wysiwyg',
-        ),
-    ),
-    'only_on'    => array(
-		'id'       => array( '130', ),
-	),
-);	
-
-$meta_boxes[] = array(
-    'title'    => 'Abschnitt 5',
-    'post_types' => array( 'page' ),
-    'context'  => 'normal',
-    'priority' => 'high',
-    'fields' => array(
-		array(
-			'name'  => 'Textbox',
-			'id'    => 'aa_section_5',
-			'type'  => 'wysiwyg',
-        ),
-    ),
-    'only_on'    => array(
-		'id'       => array( '130', ),
-	),
-);
+	$meta_boxes[] = array(
+	    'title'    => 'Abschnitt 3',
+	    'post_types' => array( 'page' ),
+	    'context'  => 'normal',
+	    'priority' => 'high',
+	    'fields' => array(
+			array(
+				'name'  => 'Textbox',
+				'id'    => 'aa_section_3',
+				'type'  => 'wysiwyg',
+	        ),
+	    ),
+	    'only_on'    => array(
+			'id'       => array( '130', ),
+		),
+	);	
+	
+	$meta_boxes[] = array(
+	    'title'    => 'Abschnitt 5',
+	    'post_types' => array( 'page' ),
+	    'context'  => 'normal',
+	    'priority' => 'high',
+	    'fields' => array(
+			array(
+				'name'  => 'Textbox',
+				'id'    => 'aa_section_5',
+				'type'  => 'wysiwyg',
+	        ),
+	    ),
+	    'only_on'    => array(
+			'id'       => array( '130', ),
+		),
+	);
 
 ////////////////////////////////////////// Helfen und Geben
 $meta_boxes[] = array(
@@ -460,7 +460,7 @@ $meta_boxes[] = array(
 // Autor/Leiter Meta Boxes auf Gruppenseiten
 // MetaInfos
 
-$meta_boxes[] = array(
+	$meta_boxes[] = array(
         'title'    => 'Anspechpartner/Leiter',
         'post_types' => array( 'page' ),
         'context'  => 'normal',
@@ -642,7 +642,7 @@ $meta_boxes[] = array(
 					'dateFormat' => 'dd.mm.yy',
 					'timeFormat' => "HH:mm 'Uhr'",
 					'regional' => 'de',
-					'defaultValue' => "00:00 'Uhr'",
+					'defaultValue' => date('d.m.Y, H:i', time()).' Uhr',
 				),
 			),
             array(
@@ -659,7 +659,7 @@ $meta_boxes[] = array(
 					'dateFormat' => 'dd.mm.yy',
 					'timeFormat' => "HH:mm 'Uhr'",
 					'regional' => 'de',
-					'defaultValue' => "00:00 'Uhr'",
+					'defaultValue' => date('d.m.Y, H:i', time()).' Uhr', 
 				),
 			),
 			array(

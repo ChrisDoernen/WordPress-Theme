@@ -1,5 +1,6 @@
 Changelog:
 
+
 1.6.2
 - Event datetime default value
 - Bugfixe blog category archieves
