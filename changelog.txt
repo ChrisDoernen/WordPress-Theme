@@ -1,9 +1,11 @@
 Changelog:
 
+1.6.3
+- Bugfixes/changes in permalink structure for news & blog
 
 1.6.2
 - Event datetime default value
-- Bugfixe blog category archieves
+- Bugfixes blog category archieves
 
 1.6.1
 - Bugfix index loop
