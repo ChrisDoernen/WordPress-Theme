@@ -52,7 +52,7 @@
     							    
     								while ($the_query->have_posts()) 
     								{
-                                        $currentMonth = null;
+                                        //$currentMonth = null;
                                         $the_query->the_post();
                                         $link = get_permalink();
                                         
