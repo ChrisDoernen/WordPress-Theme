@@ -1,5 +1,8 @@
 Changelog:
 
+1.6.4
+- Datenschutz and Impressum on different pages (GDPR)
+
 1.6.3
 - Bugfixes/changes in permalink structure for news & blog
 
