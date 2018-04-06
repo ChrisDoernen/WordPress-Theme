@@ -86,7 +86,7 @@
     </div>
     <div class='footer__copyright background-dark'>
             <div class=''>
-                &copy; <?php echo date('Y'); ?> FCG ARCHE Augsburg. <a href="<?php echo esc_url( home_url( '/' ) ).'impressum-datenschutz'; ?>">Impressum/Datenschutz</a>
+                &copy; <?php echo date('Y'); ?> FCG ARCHE Augsburg &ndash; <a href="<?php echo esc_url( home_url( '/' ) ).'impressum'; ?>">Impressum</a> / <a href="<?php echo esc_url( home_url( '/' ) ).'datenschutz'; ?>">Datenschutz</a>
             </div>
         </div>
     </div>
