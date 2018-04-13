@@ -163,7 +163,7 @@
 						            <i class="fa fa-2x fa-microphone"></i>
 		                        </div>
                                 <div class="sermon__archive-text">
-                                    <a href="<?php echo esc_url( home_url( '/' ) ).'gottesdienst/predigten'; ?>"> Neueste Predigten <br> zum Download</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ).'predigten'; ?>"> Neueste Predigten <br> zum Download</a>
                                 </div>
                             </div>
                         </div>

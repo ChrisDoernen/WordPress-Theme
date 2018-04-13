@@ -6,7 +6,7 @@
 			<div class="col-xs-12 menu">
 				<ul>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a></li>
-					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>/news-blog/wer-ist-jesus">JESUS</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>news-blog/kirche-und-glaube/sjesus">JESUS</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>ueber-uns">ÜBER UNS</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>gottesdienst">GOTTESDIENST</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>events-termine">EVENTS & TERMINE</a></li>
