@@ -323,6 +323,23 @@ $meta_boxes[] = array(
 	);	
 	
 	$meta_boxes[] = array(
+	    'title'    => 'Leitungsteam',
+	    'post_types' => array( 'page' ),
+	    'context'  => 'normal',
+	    'priority' => 'high',
+	    'fields' => array(
+			array(
+				'name'  => 'Leitungsteam HTML',
+				'id'    => 'aa_section_leadership',
+				'type'  => 'textarea',
+	        ),
+	    ),
+	    'only_on'    => array(
+			'id'       => array( '130', ),
+		),
+	);
+	
+	$meta_boxes[] = array(
 	    'title'    => 'Abschnitt 5',
 	    'post_types' => array( 'page' ),
 	    'context'  => 'normal',

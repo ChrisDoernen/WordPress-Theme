@@ -40,91 +40,10 @@
 							<h1 class="frontpageHeading">Leitungsteam</h1>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildUrbanBeck.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Urban Beck</span><br>
-									<span class="leadership__position">Gemeindeleiter</span><br>
-									<span class="leadership__position">1. Vorsitzender</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildAndiNeumann.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Andi Neumann</span><br>
-									<span class="leadership__position">Pastor</span><br>
-									<span class="leadership__position">2. Vorsitzender</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildUdoFuhrmann.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Udo Fuhrmann</span><br>
-									<span class="leadership__position">Finanzen und Schriftführung</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildEmilPersson.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Emil Persson</span><br>
-									<span class="leadership__position">Diakon</span><br>
-									<span class="leadership__position">&nbsp;</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildMarieLuiseFrost.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Marie-Luise Frost</span><br>
-									<span class="leadership__position">Diakonin</span><br>
-									<span class="leadership__position">&nbsp;</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildBrigitteBinswanger2.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Brigitte Binswanger</span><br>
-									<span class="leadership__position">Diakonin</span><br>
-									<span class="leadership__position">&nbsp;</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-6 col-ms-4 col-sm-3">
-							<div class="leadership">
-								<div class="leadership__image">
-									<img class="img-responsive" src="https://arche-augsburg.de/wp-content/uploads/ProfilbildBerndFrost1.jpg"></img>
-								</div>
-								<div class="leadership__info">
-									<span class="leadership__name">Bernd Frost</span><br>
-									<span class="leadership__position">Missionar</span><br>
-									<span class="leadership__position">&nbsp;</span>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php
+						$leadershipAreaHtml = rwmb_meta( "aa_section_leadership" );
+						echo $leadershipAreaHtml;
+					?>
 				</div>
 			</div>
 		</div>

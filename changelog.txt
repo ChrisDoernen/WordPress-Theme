@@ -1,7 +1,10 @@
 Changelog:
 
+1.6.6
+- Leadership section as html field in database
+
 1.6.5
-- Bigfixes
+- Bugfixes
 
 1.6.4
 - Datenschutz and Impressum on different pages (GDPR)
