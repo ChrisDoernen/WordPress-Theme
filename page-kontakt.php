@@ -46,7 +46,7 @@
 					</div>
 					<div class="row">
 					    <div class="col-xs-12 ">
-					        <?php echo do_shortcode( '[contact-form-7 id="487" title="Kontaktformular 1"]' );?>
+					        <?php echo do_shortcode( '[contact-form-7 id="487" title="Formular Kontakt Seite"]' );?>
 					    </div>
 					</div>
 				</div>
