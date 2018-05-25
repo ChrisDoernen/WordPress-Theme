@@ -32,7 +32,7 @@
                                 $argu = array(
                                     'post_type' => 'events',
                                     'orderby' => 'meta_value_num', 
-                                    'meta_key'=> 'aa_event_start_datetime',
+                                    'meta_key'=> 'aa_event_end_datetime',
                                     'order' => 'ASC',
                                     'meta_value' => strtotime("-2 week"),
                                     'meta_compare' => '>',

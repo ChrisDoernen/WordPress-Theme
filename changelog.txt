@@ -1,5 +1,9 @@
 Changelog:
 
+1.6.7
+- Show events on event page until end date
+- Renamed contact form on contact page
+
 1.6.6
 - Leadership section as html field in database
 
