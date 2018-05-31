@@ -20,7 +20,7 @@
 	                <div class="row">
                 		<div class="col-xs-12">
 							<div class="job__date ">
-								Jobinfo / <?php echo get_the_date();?>
+								<?php echo the_modified_date();?>
 							</div>
 						</div>
 	                </div>
@@ -80,9 +80,9 @@
 						       	
 						       	<?php if ( rwmb_meta ( 'aa_job_estimated_time' ) != ''){?>
 									<p>
-										<span class="job-meta-info">Zeitaufwand/Woche:</span><br>
+										<span class="job-meta-info">Zeitaufwand:</span><br>
 							            <span class="">
-							               <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h
+							               ca. <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h in der Woche
 							            </span>
 						            </p>
 						        <?php } ?>

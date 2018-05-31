@@ -66,7 +66,7 @@
                 }
     		},
     		error: function (data) {
-    		    alert("error");
+    		    alert("Fehler beim laden der Jobs.");
             },
             complete: function(data) {
             }

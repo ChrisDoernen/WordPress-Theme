@@ -31,7 +31,7 @@
         
         <?php if ( rwmb_meta ( 'aa_job_estimated_time' ) != ''){?>
             <span class="job-tag ">
-                <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h
+                ca. <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h in der Woche
             </span>
         <?php } ?>
         

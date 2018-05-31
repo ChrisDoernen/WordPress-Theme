@@ -1370,7 +1370,7 @@ blockquote p {
 
 .job {
     height: 130px;
-    border-top: 1px solid lightgray;
+    border-top: 1px solid #efefef;
     border-radius: 3px;
     padding: 15px 10px 0 10px;
 }
@@ -1382,6 +1382,7 @@ blockquote p {
 .job h3 {
     margin: 2px 0 10px 0;
     font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .job p {
@@ -1412,7 +1413,7 @@ blockquote p {
 }
 
 .job-tag {
-    border: 1px solid lightgray;
+    border: 1px solid #e2e2e2;
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 0.8rem;
