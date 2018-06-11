@@ -435,7 +435,7 @@ background-color: #ececec;
 }
 
 .leadership {
-      
+    min-height: 250px;
 }
 
 .leadership__image img {
