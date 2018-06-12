@@ -38,13 +38,17 @@
                                 $sermons = [];
                                 
                                 foreach(glob($sermonDirectory) as $file) {
-                                    $split = explode("_", basename($file));
-                                    $sermon['date'] = date_create_from_format('Y-m-d', $split[0]);
-                                    $sermon['preacher'] = $split[1];
-                                    $sermon['fileName'] = basename($file);
-                                    $sermon['title'] = explode(".", $split[2])[0];
-                                    
-                                    array_push($sermons, $sermon);
+                                	
+                                	$regularExpression = "/\d{4}-\d{2}-\d{2}_.+_.+\.mp3/";
+                                	if(preg_match($regularExpression, $file) === 1)
+                                	{
+	                                    $split = explode("_", basename($file));
+	                                    $sermon['date'] = date_create_from_format('Y-m-d', $split[0]);
+	                                    $sermon['preacher'] = $split[1];
+	                                    $sermon['fileName'] = basename($file);
+	                                    $sermon['title'] = explode(".", $split[2])[0];
+	                                    array_push($sermons, $sermon);
+                                	}
                                 }
                                 
                                 rsort($sermons);
