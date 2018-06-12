@@ -2,7 +2,7 @@ Changelog:
 
 1.6.8
 - Parsing of sermon audio files after validation
-- 
+- Remove whitespace in sermon date
 
 1.6.7
 - Show events on event page until end date
