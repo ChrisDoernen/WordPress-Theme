@@ -412,6 +412,8 @@ $meta_boxes[] = array(
 			array (
 				'name'  => 'Grafiken',
 				'id'    => 'aa_event_gx',
+				'desc' => 'Hier können Designs oder Flyer hochgeladen werden. Bei zweiseitigen Flyern bitte die Vorderseite auf
+							die erste Position schieben.',
 				'type'  => 'image_advanced',
 				'max_file_uploads' => '2',
 				'force_delete' => false,
