@@ -374,6 +374,35 @@ $meta_boxes[] = array(
 
 // Meta Boxes auf Events	
 	
+		$meta_boxes[] = array(
+        'title'    => 'Text für ARCHE Termine print',
+        'post_types' => array( 'events' ),
+        'context'  => 'normal',
+        'priority' => 'high',
+        'fields' => array(
+			array (
+				'name' => 'Text',
+				'desc' => '',
+				'id'   => "aa_event_text_alternative",
+				'type' => 'textarea',
+				'cols' => 20,
+				'rows' => 4,
+			),
+		),
+		'validation' => array(
+		    'rules'  => array(
+		        'aa_event_text_alternative' => array(
+		            'maxlength'  => 450,
+		        ),
+		    ),
+		    'messages' => array(
+		        'aa_event_text_alternative' => array(
+		            'maxlength'  => 'Der Text darf maximal 450 Zeichen haben.',
+		        ),
+		    )
+		),
+	);
+	
 	$meta_boxes[] = array(
         'title'    => 'Designs/Flyer',
         'post_types' => array( 'events' ),
