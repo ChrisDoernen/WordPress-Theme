@@ -109,4 +109,14 @@
         });
     });
 
+    $( document ).ready(function() {
+        $( 'a.url' ).each(function () {
+            var href = $( this ).attr('href');
+            if (href == 'https://churchdb.arche-augsburg.de/?q=churchcal' ) {
+                var html = $( this ).html();
+                $( this ).replaceWith( html );
+            }
+        });
+    });
+
 })(jQuery);  
