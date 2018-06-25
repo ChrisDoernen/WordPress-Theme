@@ -1,7 +1,8 @@
 Changelog:
 
 1.6.9
-- Add a advertising start date to events
+- Add a publishing/advertising start date to events
+- Programmatically remove wrong links from calendar
 
 1.6.8
 - Parsing of sermon audio files after validation
