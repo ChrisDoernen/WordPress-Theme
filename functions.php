@@ -92,10 +92,10 @@ function create_posttype_events() {
             	'slug' => 'events-termine',
             	'with_front'  => false,
             	),
-            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes',),
+            'supports' => array('title', 'editor', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-megaphone',
-            'show_in_rest'       => true,
+            'show_in_rest'       => false,
       		'rest_base'          => 'events-api',
       		'rest_controller_class' => 'WP_REST_Posts_Controller',
         )
@@ -145,7 +145,7 @@ function create_posttype_jobs() {
             'supports' => array('title', 'editor', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-heart',
-            'show_in_rest'       => true,
+            'show_in_rest'       => false,
       		'rest_base'          => 'jobs-api',
       		'rest_controller_class' => 'WP_REST_Posts_Controller',
         )
