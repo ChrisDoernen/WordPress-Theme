@@ -382,7 +382,7 @@ $meta_boxes[] = array(
         'fields' => array(
 			array (
 				'name' => 'Text',
-				'desc' => '',
+				'desc' => 'Dieser Text darf kein HTML enthalten und ist auf 450 Zeichen begrenzt.',
 				'id'   => "aa_event_text_alternative",
 				'type' => 'textarea',
 				'cols' => 20,
@@ -482,26 +482,25 @@ $meta_boxes[] = array(
 	);
 	
 	$meta_boxes[] = array(	
-		'title'    => 'Veröffentlichungsdatum',
+		'title'    => 'Veröffentlichungsdatum Werbekanäle',
         'post_types' => array( 'events' ),
-        'context'  => 'normal',
+         'context'  => 'normal',
         'priority' => 'high',
         'fields' => array(
             array(
-				'name'       => 'ARCHE Termine (print)',
+				'name'       => 'Datum',
 				'id'         => 'aa_event_publishing_start_datetime',
+				'desc' => 'Ab diesem Datum wird auf den Kanälen ARCHE Termine print, ARCHE Termine online, Gottesdienst Ansagen und Gottesdienst Präsentation werbung gemacht.',
 				'type'       => 'datetime',
 				// jQuery datetime picker options.
 				// For date options, see here http://api.jqueryui.com/datepicker
 				// For time options, see here http://trentrichardson.com/examples/timepicker/
 				'js_options' => array(
-					'showTimepicker' => true,
-					'stepMinute' => '5',
+					'showTimepicker' => false,
 					'separator' => ', ',
 					'dateFormat' => 'dd.mm.yy',
-					'timeFormat' => "HH:mm 'Uhr'",
 					'regional' => 'de',
-					'defaultValue' => date('d.m.Y, H:i', time()).' Uhr',
+					'defaultValue' => date('d.m.Y', time()).' Uhr',
 				),
 			),
 		),
@@ -650,6 +649,13 @@ add_filter( 'rwmb_aa_event_end_datetime_value', function( $value ) {
 } );
 add_filter( 'rwmb_aa_event_end_datetime_field_meta', function( $value ) {
     return $value ? date( 'd.m.Y, H:i', $value ).' Uhr' : '';
+} );
+
+add_filter( 'rwmb_aa_event_publishing_start_datetime_value', function( $value ) {
+    return $value ? date_create_from_format('d.m.Y', $value )->getTimestamp() : '';
+} );
+add_filter( 'rwmb_aa_event_publishing_start_datetime_field_meta', function( $value ) {
+    return $value ? date( 'd.m.Y', $value ) : '';
 } );
 
 
