@@ -92,7 +92,7 @@ function create_posttype_events() {
             	'slug' => 'events-termine',
             	'with_front'  => false,
             	),
-            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes',),
+            'supports' => array('title', 'editor', 'page-attributes',),
             'menu_position' => 5,
             'menu_icon' => 'dashicons-megaphone',
             'show_in_rest'       => true,
