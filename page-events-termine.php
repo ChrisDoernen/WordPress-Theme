@@ -38,9 +38,9 @@
                                     'meta_compare' => '>',
                                     'tax_query' => array(
                                     array(
-                                        'taxonomy' => 'Anzeigeeinstellungen',
+                                        'taxonomy' => 'Werbekanäle',
                                         'field' => 'slug',
-                                        'terms' => 'news-and-events',
+                                        'terms' => 'homepage-news-and-events',
                                         ),
                                     )
                                 );

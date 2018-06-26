@@ -85,9 +85,9 @@
                                         'order' => 'DESC',
                                         'tax_query' => array(
                                         array(
-                                            'taxonomy' => 'Anzeigeeinstellungen',
+                                            'taxonomy' => 'Werbekanäle',
         								    'field' => 'slug',
-        								    'terms' => 'startseite',
+        								    'terms' => 'homepage-startseite',
                                             ),
                                         )
                                     );
