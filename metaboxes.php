@@ -474,10 +474,16 @@ $meta_boxes[] = array(
 		        'aa_event_start_datetime' => array(
 		            'required'  => true,
 		        ),
+		        'aa_event_end_datetime' => array(
+		            'required'  => true,
+		        ),
 		    ),
 		    'messages' => array(
 		        'aa_event_start_datetime' => array(
 		            'required'  => 'Bitte gib ein Starttermin an.',
+		        ),
+		        'aa_event_end_datetime' => array(
+		            'required'  => 'Bitte gib ein Endtermin an.',
 		        ),
 		    )
 		),
