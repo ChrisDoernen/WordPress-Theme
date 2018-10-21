@@ -158,8 +158,6 @@
 												};
 												echo '">
 													  <a href="'.$featuredImagesLink[$key].'"><img src="'.$value.'" alt=""></a>
-													  <div class="carousel-caption">
-													  </div>
 													</div>
 												';
 											}

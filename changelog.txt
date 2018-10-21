@@ -1,5 +1,8 @@
 Changelog:
 
+1.6.10
+- Remove title from homepage slider
+
 1.6.9
 - Add a publishing/advertising start date to events
 - Programmatically remove wrong links from calendar
