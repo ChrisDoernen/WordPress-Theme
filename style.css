@@ -18,6 +18,7 @@ body {
     font-weight: 400;
     font-size: 1.1rem;
     color: #7b7b7b;
+    overflow-x: hidden;
 }
 
 a {
@@ -162,7 +163,7 @@ img.aligncenter {
   height: 50px;
   left: 0;
   position: absolute;
-  right: 0;
+  right: -2px;
   transform: skewY(-0.8deg);
   transform-origin: 100%;
   z-index: 1;
@@ -177,7 +178,7 @@ img.aligncenter {
   height: 50px;
   left: 0;
   position: absolute;
-  right: 0;
+  right: -2px;
   transform: skewY(-0.5deg);
   transform-origin: 0%;
   z-index: 1;
@@ -192,7 +193,7 @@ img.aligncenter {
   height: 50px;
   left: 0;
   position: absolute;
-  right: 0;
+  right: -2px;
   -webkit-transform: rotate(-1.4deg);
   -ms-transform: rotate(-1.4deg);
   transform: rotate(-1.4deg);
@@ -211,7 +212,7 @@ img.aligncenter {
   height: 50px;
   left: 0;
   position: absolute;
-  right: 0;
+  right: -2px;
   -webkit-transform: rotate(0.8deg);
   -ms-transform: rotate(0.8deg);
   transform: rotate(0.8deg);

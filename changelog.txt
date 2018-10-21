@@ -2,6 +2,7 @@ Changelog:
 
 1.6.10
 - Remove title from homepage slider
+- Fix horizontal scrollbar appearing on chrome windows
 
 1.6.9
 - Add a publishing/advertising start date to events
