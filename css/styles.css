@@ -1369,10 +1369,9 @@ blockquote p {
 }
 
 .job {
-    height: 130px;
-    border-top: 1px solid #efefef;
+    /* border-top: 1px solid #efefef; */
     border-radius: 3px;
-    padding: 15px 10px 0 10px;
+    padding: 15px 10px 10px 10px;
 }
 
 .job:hover {
@@ -1386,7 +1385,7 @@ blockquote p {
 }
 
 .job p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
@@ -1413,11 +1412,13 @@ blockquote p {
 }
 
 .job-tag {
-    border: 1px solid #e2e2e2;
+    border: 1px solid #568289;
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 0.8rem;
     margin: 0 3px 0 0;
+    display: inline-block;
+    color: #568289;
 }
 
 .job__meta-box {
