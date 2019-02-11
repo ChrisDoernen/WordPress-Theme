@@ -1,5 +1,9 @@
 Changelog:
 
+1.6.11
+- Add spinner to jobs page, style improvements
+- Prepare events termine history page
+
 1.6.10
 - Remove title from homepage slider
 - Fix horizontal scrollbar appearing on chrome windows
