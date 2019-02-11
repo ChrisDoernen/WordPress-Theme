@@ -81,10 +81,8 @@
 						</div>
 					</div>
 					
-					<div id="jobs-container" class="row">
-					
-    					
-					</div>
+					<div id="jobs-container" class="row"></div>
+					<div id="jobs-loading-spinner"><i class="fa fa-circle-o-notch fa-2x fa-spin"></i></div>
 					<div class="row jobs-display-count">
 						zeige <span class="jobs-display-count__currently-loaded">x</span> von  <span class="jobs-display-count__total">y</span> Einträgen
 					</div>

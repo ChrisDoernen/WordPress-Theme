@@ -50,7 +50,7 @@
     		dataType: 'json',
     		
     		beforeSend:function(xhr){
-    		    // show load animation
+    		    $('#jobs-loading-spinner').css('display', 'block');
     		},
     		success:function(data){
     			$('#jobs-container').append(data[0]); // insert data
@@ -66,9 +66,11 @@
                 }
     		},
     		error: function (data) {
+    		    $('#jobs-loading-spinner').css('display', 'none');
     		    alert("Fehler beim laden der Jobs.");
             },
             complete: function(data) {
+                $('#jobs-loading-spinner').css('display', 'none');
             }
     	});
     }

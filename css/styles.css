@@ -1389,6 +1389,11 @@ blockquote p {
     margin-bottom: 10px;
 }
 
+#jobs-loading-spinner {
+    text-align: center;
+    color: lightgray;
+}
+
 .job__category {
 }
 
