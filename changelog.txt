@@ -3,6 +3,8 @@ Changelog:
 1.6.11
 - Add spinner to jobs page, style improvements
 - Prepare events termine history page
+- Fix PHP warnings (get property of non object $post) in ajax job loop
+- Add Predigten menu item to main navigation
 
 1.6.10
 - Remove title from homepage slider

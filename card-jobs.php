@@ -9,7 +9,7 @@
             <?php echo rwmb_meta ( 'aa_job_desc' ); ?>
         </p>
         
-        <?php $terms = get_the_terms($post->ID, "Job-Kategorie");
+        <?php $terms = get_the_terms(get_the_ID(), "Job-Kategorie");
             $count = count($terms);
             if ( $count > 0 ){
                 foreach ( $terms as $term ) { ?>
@@ -19,7 +19,7 @@
             <?php }
         } ?>
         
-        <?php $terms = get_the_terms($post->ID, "Arbeitsbereich");
+        <?php $terms = get_the_terms(get_the_ID(), "Arbeitsbereich");
             $count = count($terms);
             if ( $count > 0 ){
                 foreach ( $terms as $term ) { ?>
