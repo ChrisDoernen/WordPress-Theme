@@ -24,6 +24,7 @@
             array ("https://termine.arche-augsburg.de/veranstaltungen.ics", "Veranstaltungen"),
             array ("https://termine.arche-augsburg.de/kurseseminare.ics", "Kurse und Seminare"),
             array ("https://termine.arche-augsburg.de/royalrangers.ics", "Royal Rangers"),
+            array ("https://termine.arche-augsburg.de/lobpreis.ics", "Lobpreisteam"),
             //array ("https://termine.arche-augsburg.de/gesamtkalender.ics",""),
         );
     ?>
