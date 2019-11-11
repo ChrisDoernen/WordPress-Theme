@@ -1,5 +1,8 @@
 Changelog:
 
+1.6.13
+- Move GA scripts to cookie plugin to be accepted first
+
 1.6.12
 - Add lobpreis kalender
 

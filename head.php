@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <?php
-        if ($siteId == 580)
+        if ($siteId == 580) // Disable scaling for custom calendar page
         {
             echo '<meta name="viewport" content="width=1120, user-scalable=yes">';
         }
@@ -28,4 +28,3 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <?php include ('ga.php'); ?>
