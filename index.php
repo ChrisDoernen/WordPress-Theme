@@ -207,7 +207,7 @@
                                 </h3>
                                 <h3 class="section__subheading"></h3>
                                 <p class="inverse-color">Aktuelles aus dem Gemeindeleben</p>
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>news-blog" class="btn btn-default btn-inverse-color" role="button">zum Blog</a>	
+                                <a href="" class="btn btn-default btn-inverse-color" role="button">zum Blog</a>	
                             </div>
 						</div>
 						<div class="">
