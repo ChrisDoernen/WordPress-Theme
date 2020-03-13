@@ -48,8 +48,34 @@ $meta_boxes[] = array(
 			'std'   => '',
 			'class' => 'custom-class',
 			'clone' => false,
-       	),
+		),
     ),
+    'only_on'    => array(
+		'id'       => array( '5', ),
+	),
+);	
+
+$meta_boxes[] = array(
+    'title'    => 'Altert Message',
+    'post_types' => array( 'page' ),
+    'context'  => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+		array(
+			'name'  => 'Activate Alert box',
+			'desc'  => 'Hier kann die Box aktiviert werden',
+			'id'    => 'aa_home_alert_message_activate',
+			'type'  => 'checkbox',
+			'std'   => '',
+			'class' => 'custom-class',
+			'clone' => false,
+		),
+		array(
+			'name'  => 'Alert-Message',
+			'id'    => 'aa_home_alert_message',
+			'type'  => 'textarea',
+		),
+	),
     'only_on'    => array(
 		'id'       => array( '5', ),
 	),

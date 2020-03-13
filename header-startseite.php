@@ -6,7 +6,13 @@
 <header class="header header-landing-page" style="background-image: url('<?php echo $url;?>')">
 	<div class="container-fluid">
        <?php include (get_template_directory().'/navigation-row.php'); ?>
-	</div>				
+    </div>
+    <?php
+        if(rwmb_meta('aa_home_alert_message_activate')) : ?>
+        <div class=" container-fluid alert-message">
+            <?php echo rwmb_meta('aa_home_alert_message')?>
+        </div>
+    <?php endif; ?>	
     <div id="" class="fading welcome-area">
         <div class="welcome">
             <h1 class="welcome__title">WELCOME HOME
@@ -17,12 +23,12 @@
     <div class="translation fading">
         <div class="">
             <div class="translation__icon">
-                <a href="https://arche-augsburg.de/english">
+                <a href="<?php echo esc_url( home_url( '/' ) ).'english'; ?>">
                     <img class="img-responsive " src="<?php echo get_stylesheet_directory_uri(); ?>/img/TranslationBubbles2.jpg"></img>
                 </a>
             </div>
             <div class="translation__text hidden-xs">
-                <a href="https://arche-augsburg.de/english">Welcome to <br> our church</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ).'english'; ?>">Welcome to <br> our church</a>
             </div>
         </div>
     </div>
