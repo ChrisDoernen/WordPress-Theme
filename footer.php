@@ -21,7 +21,7 @@
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>ueber-uns'>Über Uns</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>gottesdienst'>Gottesdienst</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>events-termine'>Events & Termine</a></li>
-                                <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>news-blog'>News & Blog</a></li>
+                                <!-- <li><a href=''>News & Blog</a></li> -->
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>dabei-sein'>Dabei sein</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt'>Kurse & Angebote</a></li>
                                 <li><a href='<?php echo esc_url( home_url( '/' ) ); ?>helfen-geben'>Helfen & Geben</a></li>

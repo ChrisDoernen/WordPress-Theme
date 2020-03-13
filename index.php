@@ -194,7 +194,7 @@
 			</div>
 		</div>
 	</section>	
-	
+	<!--
 	<section id="blog" class="background-grey">
 		<div class="container container-ms">
 			<div class="row">
@@ -217,7 +217,7 @@
 			</div>
 		</div>
 	</section>
-	
+	-->
 	<section id='dabeiSein' class='background-white centered diagonal-top diagonal-bottom-reverse'>
 	    <div class='container container-ms'>
 	        <div class="row">

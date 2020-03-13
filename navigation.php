@@ -11,7 +11,7 @@
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>gottesdienst">GOTTESDIENST</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>predigten">PREDIGTEN</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>events-termine">EVENTS & TERMINE</a></li>
-					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>news-blog">NEWS & BLOG</a></li>
+					<!-- <li><a href="">NEWS & BLOG</a></li> -->
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>dabei-sein">DABEI SEIN</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>dein-naechster-schritt">DEIN NÄCHSTER SCHRITT</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>helfen-geben">HELFEN & GEBEN</a></li>
