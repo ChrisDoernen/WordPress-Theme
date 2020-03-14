@@ -3,7 +3,7 @@
 	$url = $image["0"];
 ?>
 
-<header class="header header-page" style="background-image: url('<?php echo $url ?>');">
+<header class="header header-page<?php if(rwmb_meta('aa_post_small_header')) { echo ' header-small'; } ?>" style="background-image: url('<?php echo $url ?>');">
 	<div class="container-fluid">
         <?php include (get_template_directory().'/navigation-row.php'); ?>
 	</div>  

@@ -1152,6 +1152,10 @@ blockquote p {
   height: 500px;
 }
 
+.header-small {
+  height: 110px !important;
+}
+
 .header-parent-page {
   background-color: #598489;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#598489+0,66b1ba+100 */

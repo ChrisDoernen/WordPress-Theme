@@ -360,6 +360,21 @@ $meta_boxes[] = array(
 // Meta Boxes auf Beitragsseiten
 
 	$meta_boxes[] = array(
+		'title'    => 'Styling',
+		'post_types' => array( 'post' ),
+		'context'  => 'normal',
+		'priority' => 'high',
+		'fields' => array(
+			array(
+				'name'  => 'Kleiner Header',
+				'id'    => 'aa_post_small_header',
+				'type'  => 'checkbox',
+				'std'   => '',
+			),
+		),
+	);
+
+	$meta_boxes[] = array(
         'title'    => 'Untertitel',
         'post_types' => array( 'post' ),
         'context'  => 'normal',

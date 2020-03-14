@@ -4,6 +4,7 @@ Changelog:
 - Show scrollbar in main menu to prevent jumping of the content
 - Disable the blog because it is not used
 - Add a configurable hint fild for important messages on the index page header
+- Add an option to have small header in blog posts
 
 1.6.13
 - Move GA scripts to cookie plugin to be accepted first
