@@ -192,11 +192,12 @@
 
 .card__sermon-title {
   padding: 0 2px;
-  font-style: italic;
+  font-weight: 600;
 }
 
 .card__sermon-date {
   padding: 0 2px;
+  font-weight: 100;
 }
 
 .card__sermon-preacher {
