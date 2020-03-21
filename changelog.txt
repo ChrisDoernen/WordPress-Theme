@@ -2,7 +2,7 @@ Changelog:
 
 1.7.1
 - Delete events termine history page
-- Constraint sermons to max 10
+- Show 5 sermons per default and add button to show all
 
 1.7.0
 - Show scrollbar in main menu to prevent jumping of the content
