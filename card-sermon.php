@@ -1,4 +1,4 @@
-<div class="card__sermon">
+<div class="card__sermon<?php if($index > $maxSermons) { echo ' hidden'; }?>">
     <div class="card__sermon-infos clearfix">
         <span class="card__sermon-date">
             <?php echo date_format($sermon['date'], 'd.m.Y'); ?>

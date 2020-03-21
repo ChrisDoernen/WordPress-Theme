@@ -55,12 +55,8 @@
                                 rsort($sermons);
 								
 								$index = 0;
-								$maxSermons = 10;
+								$maxSermons = 5;
                                 foreach($sermons as $sermon) {
-									if ($index == $maxSermons) {
-										break;
-									}
-
 									include (get_template_directory().'/card-sermon.php');
 									$index++;
                                 }
@@ -68,7 +64,12 @@
                         </div>
                     </div>
 				</div>
-			</div>	
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+					<a class="more-sermons-btn btn btn-default" role="button">Alle anzeigen</a>
+				</div>
+			</div>
 		</div>
 	</section>
  
