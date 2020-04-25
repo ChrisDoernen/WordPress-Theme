@@ -1,5 +1,8 @@
 Changelog:
 
+1.7.2
+- Replace mail icon in header with Youtube icon
+
 1.7.1
 - Delete events termine history page
 - Show 5 sermons per default and add button to show all

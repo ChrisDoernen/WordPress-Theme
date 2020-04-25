@@ -9,7 +9,7 @@
 			<div class="navigation__social-icons">
 				<a class="social-icon" href="https://www.facebook.com/archeaugsburg/" target="_blank"><i class="fa fa-facebook"></i></a>
 				<a class="social-icon" href="https://www.instagram.com/archeaugsburg/" target="_blank"><i class="fa fa-instagram"></i></a>
-			    <a class="social-icon" href="mailto:info@arche-augsburg.de"><i class="search-icon fa fa-envelope"></i></a>
+			    <a class="social-icon" href="https://www.youtube.com/channel/UC_qpqT3R4urvs-ktFfzlUzg/"><i class="fa fa-youtube"></i></a>
 			</div>
 			<div class="pull-right">
 				<button type="button" class="navigation__menu navbar-toggle toggle-nav" data-toggle="collapse" data-target="">
