@@ -57,7 +57,7 @@
 						            $count = count($terms);
 						            if ( $count > 0 ){?>
 						            	<p>
-										<span class="job-meta-info">Kategorie:</span><br>
+										<span class="job-meta-info">Kategorie</span><br>
 						                <?php foreach ( $terms as $term ) { ?>
 						                    <span class=""> 
 						                    <?php echo  $term->name; ?>
@@ -69,7 +69,7 @@
 						            $count = count($terms);
 							            if ( $count > 0 ){ ?>
 							            <p>
-										<span class="job-meta-info">Arbeitsbereich:</span><br>
+										<span class="job-meta-info">Arbeitsbereich</span><br>
 						                <?php foreach ( $terms as $term ) { ?>
 						                    <span class=""> 
 						                    <?php echo  $term->name; ?>
@@ -80,16 +80,16 @@
 						       	
 						       	<?php if ( rwmb_meta ( 'aa_job_estimated_time' ) != ''){?>
 									<p>
-										<span class="job-meta-info">Zeitaufwand:</span><br>
+										<span class="job-meta-info">Zeitaufwand</span><br>
 							            <span class="">
-							               ca. <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h in der Woche
+							               ca. <?php echo rwmb_meta ( 'aa_job_estimated_time' );?>h/Woche
 							            </span>
 						            </p>
 						        <?php } ?>
 							
 								<?php if ( rwmb_meta ( 'aa_job_ou_leader' ) != ''){?>
 									<p>
-										<span class="job-meta-info">Leiter/Kontaktperson:</span></br>
+										<span class="job-meta-info">Kontakt</span></br>
 										<?php if ( rwmb_meta( 'aa_job_ou_leader_image' ) != "") {
 											echo "<img class='job__leaderImage' src=";
 		        								$args = array('size' => 'thumbnail','type' => 'image');
@@ -107,7 +107,7 @@
 						        <?php } ?>
 								
 								
-								<p><span class="job-meta-info">Zuletzt aktualisiert:</span><br>
+								<p><span class="job-meta-info">Zuletzt aktualisiert</span><br>
 									<?php echo the_modified_date();?>
 								</p>
 							</div>

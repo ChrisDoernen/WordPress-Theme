@@ -1,5 +1,8 @@
 Changelog:
 
+1.7.3
+- Small improvements regarding jobs
+
 1.7.2
 - Replace mail icon in header with Youtube icon
 
@@ -10,7 +13,7 @@ Changelog:
 1.7.0
 - Show scrollbar in main menu to prevent jumping of the content
 - Disable the blog because it is not used
-- Add a configurable hint fild for important messages on the index page header
+- Add a configurable hint field for important messages on the index page header
 - Add an option to have small header in blog posts
 
 1.6.13
