@@ -1,5 +1,8 @@
 Changelog:
 
+1.7.4
+- UI improvements
+
 1.7.3
 - Small improvements regarding jobs
 

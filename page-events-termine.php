@@ -111,7 +111,7 @@
                                 }
                                 else 
                                 { 
-                                    echo 'Momentan sind keine Events geplant.';
+                                    echo '<div class="textCentered">Momentan sind keine Events geplant.</div>';
                                 }
                             ?>
                         </div>

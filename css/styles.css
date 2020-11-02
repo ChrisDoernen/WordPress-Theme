@@ -96,6 +96,7 @@
 
 .card-pages__title {
   text-transform: uppercase;
+  hyphens: auto;
 }
 
 .card-posts__description,
